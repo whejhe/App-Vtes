@@ -1,0 +1,24 @@
+node -v
+npm -v
+
+npm install -g @angular/cli
+ng new Inmortal-vtes
+
+ng generate service services/json-service
+ng generate guard guards
+ng generate component components/header
+ng generate component pages/main
+ng generate module pages/pages
+ng generate pipe pipes/my-custom
+
+LANZAR APLICACION
+ng serve
+
+DEPENDENCIAS:
+npm install yarn
+npm install hammerjs
+ng add @angular/material
+npm install @ngx-translate/core @ngx-translate/http-loader --save
+npm install boostrap --save
+
+
