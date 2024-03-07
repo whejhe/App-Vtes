@@ -6,3 +6,20 @@ https://www.youtube.com/watch?v=bbLiMSD-144
 
 BOOTSTRAP EN ANGULAR
 https://www.youtube.com/watch?v=9-5gnL9Hiv0
+
+OBSERVABLES
+https://www.youtube.com/watch?v=96HouMe0o5M
+
+INTERCEPTORES
+https://www.youtube.com/watch?v=VDfvkWrjzXE&t=151s
+
+TRANSICIONES
+https://www.youtube.com/watch?v=wSrGSNYikEk
+
+LOGIN Y REGISTER (FIREBASE)
+https://www.youtube.com/watch?v=8VTxuIvMTlc
+
+CRUD CON FIREBASE
+https://www.youtube.com/watch?v=t_YSrxj0wGY&t=102s
+
+
