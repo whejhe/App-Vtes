@@ -23,4 +23,6 @@ ENLACE
 https://supabase.com/
 https://vercel.com/carlos-projects-4dce2127
 
+INTEGRACION BOOTSTRAP EN ANGULAR
+https://fbellod.medium.com/como-integrar-el-framework-bootstrap-en-un-proyecto-angular-a5d53fa79e03
 
