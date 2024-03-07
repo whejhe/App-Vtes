@@ -14,11 +14,15 @@ ng generate pipe pipes/my-custom
 LANZAR APLICACION
 ng serve
 
+ELIMINAR DEPENDENCIAS
+npm uninstall nombre
+
 DEPENDENCIAS:
 npm install yarn
 npm install hammerjs
 ng add @angular/material
 npm install @ngx-translate/core @ngx-translate/http-loader --save
 npm install boostrap --save
+npm i bootstrap@5.3.3
 
 

@@ -1,9 +1,6 @@
 JSON VTES
 https://static.krcg.org/data/vtes.json
 
-TABLA REUTILIZABLE
-https://www.youtube.com/watch?v=bbLiMSD-144
-
 BOOTSTRAP EN ANGULAR
 https://www.youtube.com/watch?v=9-5gnL9Hiv0
 
