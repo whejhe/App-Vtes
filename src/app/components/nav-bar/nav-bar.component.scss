@@ -1,0 +1,21 @@
+.nav-bar{
+  background-color: rgb(75, 72, 72);
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: 100vh;
+  li{
+    list-style: none;
+    background-color: black;
+    margin: 0.5em 0;
+    padding: 0;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  a:hover{
+    color: red;
+  }
+}
