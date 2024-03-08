@@ -22,6 +22,7 @@ https://www.youtube.com/watch?v=t_YSrxj0wGY&t=102s
 ENLACE
 https://supabase.com/
 https://vercel.com/carlos-projects-4dce2127
+https://aws.amazon.com/es/
 
 INTEGRACION BOOTSTRAP EN ANGULAR
 https://fbellod.medium.com/como-integrar-el-framework-bootstrap-en-un-proyecto-angular-a5d53fa79e03
