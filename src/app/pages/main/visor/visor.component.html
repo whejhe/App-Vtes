@@ -1,4 +1,5 @@
-<div class="visor">
-  <p>visor works!</p>
-
+<div class="container">
+  <div class="flex" *ngFor="let card of cards$ | async">
+    <img [src]="card.url" alt={{card.card_text}}  />
+  </div>
 </div>

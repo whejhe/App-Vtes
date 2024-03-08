@@ -1,4 +1,30 @@
-<div class="cripta">
-  <p>cripta works!</p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Clan</th>
+        <th>Capacidad</th>
+        <th>Disciplinas</th>
+        <th>Ver más</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let card of cards$ | async"
+        (mouseenter)="setUrlImage(card.url)"
+        (mouseleave)="clearUrlImage()"
+      >        
+        <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
+        <td>{{card.clans}}</td>
+        <td>{{card.capacity}}</td>
+        <td>{{card.disciplines}}</td>
+        <td><a href="#">Info</a></td>
+      </tr>
+    </tbody>
+  </table>
 
+   <div class="imagenDestacada" *ngIf="url">
+    <img [src]="url" alt="Imagen destacada" />
+  </div>
 </div>
