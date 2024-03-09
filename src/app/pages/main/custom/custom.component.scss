@@ -1,0 +1,131 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-card{
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 500px;
+  height: 700px;
+  background-image: url('../../../../assets/img/plantilla.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  // z-index: 1;
+  .card-name{
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    font-size: 2em;
+  }
+  .icono-clan{
+    background-color: rgb(26, 15, 2);
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    width: 50px;
+    height: 50px;
+  }
+  .icono-capacidad{
+    background-image: url('../../../../assets/img/icons-vtes/others/capacity.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 87%;
+    right: 5%;
+    width: 60px;
+    height: 80px;
+    .texto-capacidad{
+      position: absolute;
+      color: antiquewhite;
+      top: 45%;
+      left: 38%;
+      font-size: 2em;
+    }
+  }
+  .iconos-disciplina1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 88%;
+    left: 6%;
+  }
+  .iconos-disciplina2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 80%;
+    left: 6%;
+  }
+  .iconos-disciplina3{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 72%;
+    left: 6%;
+  }
+  .iconos-disciplina4{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 64%;
+    left: 6%;
+  }
+  .iconos-disciplina5{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 56%;
+    left: 6%;
+  }
+  .iconos-disciplina6{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 48%;
+    left: 6%;
+  }
+  .iconos-disciplina7{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    top: 40%;
+    left: 6%;
+  }
+  .icono-logo{
+    width: 90px;
+    position: absolute;
+    right: 5%;
+  }
+  .texto-carta{
+    position: absolute;
+    bottom: 7%;
+    left: 18%;
+    width: 70%;
+    height: 100px;
+    // background-color: antiquewhite;
+    // z-index: -1;
+    color: black;
+  }
+}
+
+.spacio{
+  width: 20px;
+}
+
+.formulario{
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 40%;
+}
