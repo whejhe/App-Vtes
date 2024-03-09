@@ -1,12 +1,9 @@
 export interface diseñoCardVampire{
   nombre: string;
-  tipo: ImageData;
-  coste:ImageData;
-  imagen:ImageData;
+  coste:number;
+  imagen:string;
   description: string;
-  clan: ImageData;
-  disciplinas: ImageData[];
-  grupo:string;
-  edicicion:ImageData;
-
+  clan: string;
+  disciplinas: string[];
+  grupo:number;
 }

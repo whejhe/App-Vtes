@@ -35,8 +35,45 @@
   <div class="spacio"></div>
 
   <div class="formulario">
-    <form action="">
-      <input type="text" name="name" id="name" placeholder="Nombre" />
-    </form>
-  </div>
+      <form>
+        <div class="mb-3">
+          <input placeholder="Nombre" type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+
+        <div class="mb-3">
+          <input placeholder="Coste del Vampiro" min="1" max="11" type="number" class="form-control" id="coste" name="coste">
+        </div>
+
+        <div class="mb-3">
+          <input placeholder="Imagen Principal" type="text" class="form-control" id="imagen" name="imagen">
+        </div>
+
+        <div class="mb-3">
+          <textarea placeholder="Descripción" class="form-control" id="description" name="description"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="clan" class="form-label">Clan</label>
+          <select class="form-select" id="clan" name="clan">
+            <option value="clan1">Clan 1</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="disciplinas" class="form-label">Disciplinas</label>
+          <select multiple class="form-select" id="disciplinas" name="disciplinas">
+            <!-- Aquí puedes incluir opciones específicas de las disciplinas -->
+            <option value="disciplina1">Disciplina 1</option>
+            <option value="disciplina2">Disciplina 2</option>
+            <!-- Agrega más opciones según tus necesidades -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <input placeholder="Grupo" type="number" class="form-control" id="grupo" name="grupo">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
 </div>

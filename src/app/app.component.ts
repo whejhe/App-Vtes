@@ -6,6 +6,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { SideBarComponent } from "./components/side-bar/side-bar.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
         HeaderComponent,
         FooterComponent,
         SideBarComponent,
+        FormsModule
     ]
 })
 export class AppComponent {

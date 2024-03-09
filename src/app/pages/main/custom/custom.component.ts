@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-custom',
   standalone: true,
-  imports: [],
+  imports: [ ],
   templateUrl: './custom.component.html',
   styleUrl: './custom.component.scss'
 })
