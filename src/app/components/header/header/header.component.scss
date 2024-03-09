@@ -8,3 +8,23 @@
     margin: 0;
     padding: 0;
 }
+
+.logo{
+  position: fixed;
+  display: inline;
+  width: 50px;
+  top: 10px;
+  left: 2%;
+  img{
+    width: 80px;
+  }
+  a{
+    position: absolute;
+    top: 35%;
+    font-size: 2em;
+  }
+}
+
+.titulo{
+  display: inline;
+}
