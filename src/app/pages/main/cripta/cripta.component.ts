@@ -3,13 +3,14 @@ import { JsonServiceService } from '../../../services/json-service.service';
 import { Card } from '../../../models/cards.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
+import { FichaCardComponent } from "../../../components/ficha-card/ficha-card.component";
 
 @Component({
-  selector: 'app-cripta',
-  standalone: true,
-  imports: [AsyncPipe, CommonModule],
-  templateUrl: './cripta.component.html',
-  styleUrl: './cripta.component.scss'
+    selector: 'app-cripta',
+    standalone: true,
+    templateUrl: './cripta.component.html',
+    styleUrl: './cripta.component.scss',
+    imports: [AsyncPipe, CommonModule, FichaCardComponent]
 })
 export class CriptaComponent implements OnInit {
   public cards$!:Observable<Card[]>
@@ -32,9 +33,9 @@ export class CriptaComponent implements OnInit {
   filtarTypes(types: string):void {
     this.jsonSvc.getJsonData().subscribe(
       cards => {
-        this.cards$ = of(cards.filter(card => (card.types.includes('Vampire')) || (card.types.includes('Imbued'))));      
+        this.cards$ = of(cards.filter(card => (card.types.includes('Vampire')) || (card.types.includes('Imbued'))));
       }
-    )    
+    )
   }
 
   ngOnInit(): void {

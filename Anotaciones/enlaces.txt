@@ -1,6 +1,9 @@
 BOOTSTRAP
 https://getbootstrap.com/
 
+ANGULAR MATERIAL
+https://material.angular.io/
+
 JSON VTES
 https://static.krcg.org/data/vtes.json
 
