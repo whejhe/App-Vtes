@@ -45,32 +45,54 @@
         </div>
 
         <div class="mb-3">
-          <input placeholder="Imagen Principal" type="text" class="form-control" id="imagen" name="imagen">
-        </div>
-
-        <div class="mb-3">
-          <textarea placeholder="Descripción" class="form-control" id="description" name="description"></textarea>
+          <label for="imagen" class="form-label">Imagen</label>
+          <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)" accept="image/*" name="imagen">
+          <img  class="img-thumbnail mt-2" alt="Vista previa de la imagen">
         </div>
 
         <div class="mb-3">
           <label for="clan" class="form-label">Clan</label>
           <select class="form-select" id="clan" name="clan">
-            <option value="clan1">Clan 1</option>
+            <option value="brujah">Brujah</option>
+            <option value="caitiff">Caitiff</option>
+            <option value="malkavian">Malkavian</option>
+            <option value="nosferatu">Nosferatu</option>
+            <option value="toreador">Toreador</option>
+            <option value="tremere">Tremere</option>
+            <option value="ventrue">Ventrue</option>
+            <option value="abominate">Abominate</option>
+            <option value="assamite">Assamite</option>
+            <option value="baali">Baali</option>
+            <option value="daughters">Daughters</option>
+            <option value="followerSet">Follower of Set</option>
+            <option value="gangrel">Gangrel</option>
+            <option value="gargoyle">Gargoyle</option>
+            <option value="giovanni">Giovanni</option>
+            <option value="nagaraja">Nagaraja</option>
+            <option value="ravnos">Ravnos</option>
+            <option value="salubri">Salubri</option>
+            <option value="samedi">Samedi</option>
+            <option value="truebrujah">True Brujah</option>
+            <option value="akunanse">Akunanse</option>
+            <option value="guruhi">Guruhi</option>
+            <option value="ishtarri">Ishtarri</option>
+            <option value="osebo">Osebo</option>
           </select>
         </div>
 
         <div class="mb-3">
-          <label for="disciplinas" class="form-label">Disciplinas</label>
-          <select multiple class="form-select" id="disciplinas" name="disciplinas">
-            <!-- Aquí puedes incluir opciones específicas de las disciplinas -->
-            <option value="disciplina1">Disciplina 1</option>
-            <option value="disciplina2">Disciplina 2</option>
-            <!-- Agrega más opciones según tus necesidades -->
-          </select>
+          <label for="blood" class="form-label">Disciplinas</label>
+          <input type="checkbox" class="form-check-input" id="blood" name="blood" value="Animalismo">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="grupo" class="form-label">Grupo</label>
+          <input type="number" min="1" max="7" class="form-control" id="grupo" name="grupo">
         </div>
 
         <div class="mb-3">
-          <input placeholder="Grupo" type="number" class="form-control" id="grupo" name="grupo">
+          <textarea placeholder="Descripción" class="form-control" id="description" name="description"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>

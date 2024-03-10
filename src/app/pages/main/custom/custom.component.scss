@@ -118,6 +118,9 @@
     color: black;
     padding: 1em;
   }
+  #grupo{
+    position: absolute;
+  }
 }
 
 .spacio{
@@ -125,7 +128,7 @@
 }
 
 .formulario{
-  border: 1px solid black;
+  border: 5px solid black;
   border-radius: 8px;
   width: 40%;
   padding: 1em;
