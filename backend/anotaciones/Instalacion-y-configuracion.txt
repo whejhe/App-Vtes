@@ -1,0 +1,8 @@
+CREAR package.json
+npm init
+
+DEPENDENCIAS
+npm install express 
+npm install mongoose
+npm install nodemon
+npm install dotenv (Carga de variables de entorno)
