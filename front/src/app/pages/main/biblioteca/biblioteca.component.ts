@@ -3,13 +3,14 @@ import { JsonServiceService } from '../../../services/json-service.service';
 import { Card } from '../../../models/cards.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
+import { SideBarComponent } from "../../../components/side-bar/side-bar.component";
 
 @Component({
-  selector: 'app-biblioteca',
-  standalone: true,
-  imports: [AsyncPipe, CommonModule],
-  templateUrl: './biblioteca.component.html',
-  styleUrl: './biblioteca.component.scss'
+    selector: 'app-biblioteca',
+    standalone: true,
+    templateUrl: './biblioteca.component.html',
+    styleUrl: './biblioteca.component.scss',
+    imports: [AsyncPipe, CommonModule, SideBarComponent]
 })
 export class BibliotecaComponent implements OnInit {
 
@@ -33,9 +34,9 @@ export class BibliotecaComponent implements OnInit {
   filtarTypes(types: string, types2: string):void {
     this.jsonSvc.getJsonData().subscribe(
       cards => {
-        this.cards$ = of(cards.filter(card => !(card.types.includes('Vampire')) && !(card.types.includes('Imbued'))));      
+        this.cards$ = of(cards.filter(card => !(card.types.includes('Vampire')) && !(card.types.includes('Imbued'))));
       }
-    )    
+    )
   }
 
 
