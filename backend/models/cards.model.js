@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const eventSchema = new Schema({
+const cardsSchema = new Schema({
     id: Number,
-    userId: Number,
+    deckId: Number,
     name: String,
+    image: String,
     description: String,
-    date: String
+    type: String
 });
