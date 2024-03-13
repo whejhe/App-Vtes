@@ -2,13 +2,14 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-side-bar',
+  selector: 'app-filtro-crypt',
   standalone: true,
-  imports: [AsyncPipe, CommonModule],
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.scss',
+  imports: [AsyncPipe,CommonModule],
+  templateUrl: './filtro-crypt.component.html',
+  styleUrl: './filtro-crypt.component.scss'
 })
-export class SideBarComponent {
+export class FiltroCryptComponent {
+
   DisciplinesUrl = '/assets/img/icons-vtes/disciplinas/svg';
 
   imagenSeleccionada: string | null = null;
