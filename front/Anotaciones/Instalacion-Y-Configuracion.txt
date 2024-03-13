@@ -25,4 +25,6 @@ npm install @ngx-translate/core @ngx-translate/http-loader --save
 npm install boostrap --save
 npm i bootstrap@5.3.3
 
+npm install -g json-ts (generar interface apartir de archivo.json)
+con el comando: json-ts vtes.json -o vtes.d.ts
 

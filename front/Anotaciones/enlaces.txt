@@ -1,6 +1,9 @@
 DESPLIEGUE
 https://vtes-forever.vercel.app/main/biblioteca
 
+GENERAR INTERFACE APARTIR DE JSON
+https://app.quicktype.io/
+
 BOOTSTRAP
 https://getbootstrap.com/
 
