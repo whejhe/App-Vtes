@@ -3,14 +3,14 @@ import { JsonServiceService } from '../../../services/json-service.service';
 import { Card, Type } from '../../../models/vtes.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { SideBarComponent } from "../../../components/side-bar/side-bar.component";
+import { FiltroLibraryComponent } from "../../../components/filtro-library/filtro-library.component";
 
 @Component({
     selector: 'app-biblioteca',
     standalone: true,
     templateUrl: './biblioteca.component.html',
     styleUrl: './biblioteca.component.scss',
-    imports: [AsyncPipe, CommonModule, SideBarComponent]
+    imports: [AsyncPipe, CommonModule, FiltroLibraryComponent]
 })
 export class BibliotecaComponent implements OnInit {
 

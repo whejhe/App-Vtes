@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { HeaderComponent } from './components/header/header/header.component';
 import { FooterComponent } from "./components/footer/footer.component";
-import { SideBarComponent } from "./components/side-bar/side-bar.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +20,6 @@ import { FormComponent } from './components/form/form.component';
         NavBarComponent,
         HeaderComponent,
         FooterComponent,
-        SideBarComponent,
         FormComponent,
         FormsModule
     ]
