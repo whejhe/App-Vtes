@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonServiceService } from '../../../services/json-service.service';
-import { Card } from '../../../models/cards.model';
+import { Card, Type } from '../../../models/vtes.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { SideBarComponent } from "../../../components/side-bar/side-bar.component";
@@ -34,7 +34,7 @@ export class BibliotecaComponent implements OnInit {
   filtarTypes(types: string, types2: string):void {
     this.jsonSvc.getJsonData().subscribe(
       cards => {
-        this.cards$ = of(cards.filter(card => !(card.types.includes('Vampire')) && !(card.types.includes('Imbued'))));
+        this.cards$ = of(cards.filter(card => !(card.types.includes(Type.Vampire)) && !(card.types.includes(Type.Imbued))));
       }
     )
   }

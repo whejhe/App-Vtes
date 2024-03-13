@@ -1,4 +1,4 @@
-export interface Welcome {
+export interface Card {
   id:               number;
   _name:            string;
   url:              string;

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Card } from '../models/cards.model';
+import { Card } from '../models/vtes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,5 @@ export class JsonServiceService {
     const data = this.http.get<Card[]>(this.apiUrl);
     return data;
   }
-  
+
 }
