@@ -10,6 +10,7 @@ ng generate component components/header
 ng generate component pages/main
 ng generate module pages/pages
 ng generate pipe pipes/my-custom
+ng g environments
 
 LANZAR APLICACION
 ng serve
