@@ -1,0 +1,2 @@
+COMANDOS:
+mongod (Inicia el servidor y se queda a la escucha)

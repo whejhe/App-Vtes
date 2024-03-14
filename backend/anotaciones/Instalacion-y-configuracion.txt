@@ -1,8 +1,19 @@
+killall node (cerrar puertos)
+
 CREAR package.json
 npm init
 
 DEPENDENCIAS
-npm install express 
+npm install express express-handlebars
+npm install morgan
+npm install multer
 npm install mongoose
-npm install nodemon
+npm install nodemon -D
 npm install dotenv (Carga de variables de entorno)
+npm install cross-env
+npm install cors
+npm install cloudinary
+
+IMAGENES
+nm install openia
+npm install cloudinary
