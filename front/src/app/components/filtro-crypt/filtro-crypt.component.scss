@@ -6,9 +6,31 @@ nav{
 
 .disciplines{
   padding-top: 1em;
+  padding-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
 }
+
+.title{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.content-title{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+.content-title > div{
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.content-title > div > input{
+  margin-right: 0.5em;
+}
+
 .powers{
   display: flex;
   flex-wrap: wrap;
