@@ -1,0 +1,57 @@
+.deck-container{
+  width: 90%;
+  margin: auto;
+  border-bottom: 2px solid rgb(54, 54, 54);
+  padding-bottom: 1em;
+}
+
+.deck-body{
+  width: 90%;
+  margin: 2em auto auto auto;
+  padding: 1em;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 8px;
+
+  .crypt{
+    position: relative;
+    span{
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 5px;
+    }
+  }
+  .library{
+    position: relative;
+    span{
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 5px;
+    }
+  }
+  h1{
+    border-bottom: 1px solid black;
+    padding-bottom: 0.2em;
+    font-weight: lighter;
+  }
+
+}
+
+.crypt{
+  text-align: center;
+}
+
+.library{
+  text-align: center;
+}
+
+.botones{
+  text-align: center;
+  margin: auto;
+  padding-top: 1em;
+  button{
+    margin: 0.5em;
+    width: 12em;
+  }
+}
