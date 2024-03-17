@@ -8,7 +8,7 @@ import { EventsComponent } from "./events/events.component";
 import { FichaDeckComponent } from "./ficha-deck/ficha-deck.component";
 
 export const MAIN_ROUTE:Routes = [
-  {path: 'inicio', component: InicioComponent},
+  {path: '', component: InicioComponent},
   {path: 'cripta', component: CriptaComponent},
   {path: 'biblioteca', component: BibliotecaComponent},
   {path: 'custom', component: CustomComponent},
