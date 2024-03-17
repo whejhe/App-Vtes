@@ -1,2 +1,7 @@
+mongod --version
+
+En la unidad c: crear:
+data/db
+
 COMANDOS:
 mongod (Inicia el servidor y se queda a la escucha)
