@@ -7,6 +7,8 @@ https://app.quicktype.io/
 BOOTSTRAP
 https://getbootstrap.com/
 
+https://bootswatch.com/
+
 ANGULAR MATERIAL
 https://material.angular.io/
 

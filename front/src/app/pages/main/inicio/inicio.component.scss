@@ -8,9 +8,13 @@ img{
   width: auto;
 }
 
-.portada{
-  background-image: url('../../../../assets/img/portada.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.container{
+  border-bottom: 1px solid rgb(71, 71, 71);
 }
+
+// .portada{
+//   background-image: url('../../../../assets/img/portada.png');
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
