@@ -4,6 +4,7 @@
   img{
     margin: auto;
     display: block;
+    padding: 1em 0;
   }
   form{
     padding: 1em;
@@ -13,10 +14,14 @@
   }
 }
 
+.password{
+  margin-top: 1em;
+}
+
 .portada{
-  background-image: url('../../../../assets/img/portada2.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url('');
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
   margin: 1.5em 0;
 }

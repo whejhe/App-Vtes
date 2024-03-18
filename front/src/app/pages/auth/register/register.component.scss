@@ -1,0 +1,28 @@
+.container{
+    width: 35%;
+    padding: 3em;
+    img{
+      margin: auto;
+      display: block;
+      padding: 1em 0;
+    }
+    form{
+      padding: 1em;
+      border: 2px solid #212529;
+      border-radius: 8px;
+      box-shadow:  5px 0px 18px 0 rgb(68, 2, 2);
+    }
+  }
+  
+  .password{
+    margin-top: 1em;
+  }
+  
+  .portada{
+    // background-image: url('');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    margin: 1.5em 0;
+  }
+  

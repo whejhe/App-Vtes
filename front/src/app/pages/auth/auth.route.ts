@@ -6,6 +6,6 @@ import { RegisterComponent } from "./register/register.component";
 
 export const AUTH_ROUTE:Routes = [
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
 ]
