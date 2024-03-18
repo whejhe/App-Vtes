@@ -10,7 +10,11 @@ import { FiltroLibraryComponent } from "../../../components/filtro-library/filtr
     standalone: true,
     templateUrl: './biblioteca.component.html',
     styleUrl: './biblioteca.component.scss',
-    imports: [AsyncPipe, CommonModule, FiltroLibraryComponent]
+    imports: [
+      AsyncPipe, 
+      CommonModule, 
+      FiltroLibraryComponent
+    ]
 })
 export class BibliotecaComponent implements OnInit {
 

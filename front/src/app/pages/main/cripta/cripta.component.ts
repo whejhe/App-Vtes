@@ -11,7 +11,12 @@ import { FiltroCryptComponent } from "../../../components/filtro-crypt/filtro-cr
     standalone: true,
     templateUrl: './cripta.component.html',
     styleUrl: './cripta.component.scss',
-    imports: [AsyncPipe, CommonModule, FichaCardComponent, FiltroCryptComponent]
+    imports: [
+      AsyncPipe, 
+      CommonModule, 
+      FichaCardComponent, 
+      FiltroCryptComponent,
+    ]
 })
 export class CriptaComponent implements OnInit {
   public cards$!:Observable<Card[]>

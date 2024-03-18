@@ -47,13 +47,13 @@
         <div class="mb-3">
           <label for="imagen" class="form-label">Imagen</label>
           <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)" accept="image/*" name="imagen">
-          <img  class="img-thumbnail mt-2" alt="Vista previa de la imagen">
         </div>
 
         <div class="mb-3">
           <label for="clan" class="form-label">Clan</label>
           <select class="form-select" id="clan" name="clan">
-            <option value="brujah">Brujah</option>
+            <option value="" *ngFor="let clan of clans" [value]="clan">{{clan}}</option>
+            <!-- <option value="brujah">Brujah</option>
             <option value="caitiff">Caitiff</option>
             <option value="malkavian">Malkavian</option>
             <option value="nosferatu">Nosferatu</option>
@@ -76,7 +76,7 @@
             <option value="akunanse">Akunanse</option>
             <option value="guruhi">Guruhi</option>
             <option value="ishtarri">Ishtarri</option>
-            <option value="osebo">Osebo</option>
+            <option value="osebo">Osebo</option> -->
           </select>
         </div>
 

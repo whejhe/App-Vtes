@@ -14,6 +14,34 @@ export class CustomComponent {
     imagen: ''
   };
 
+  clan = '';
+  clans: string[] = [
+    'brujah',
+    'caitiff',
+    'malkavian',
+    'nosferatu',
+    'toreador',
+    'tremere',
+    'ventrue',
+    'abominate',
+    'assamite',
+    'baali',
+    'daughters',
+    'followerSet',
+    'gangrel',
+    'gargoyle',
+    'giovanni',
+    'nagaraja',
+    'ravnos',
+    'salubri',
+    'samedi',
+    'truebrujah',
+    'akunanse',
+    'guruhi',
+    'ishtarri',
+    'osebo'
+  ];
+
   onFileSelected(event: any): void {
     const file = event.target.files[0];
 
