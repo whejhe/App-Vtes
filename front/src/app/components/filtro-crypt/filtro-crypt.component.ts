@@ -13,7 +13,8 @@ export class FiltroCryptComponent {
   DisciplinesUrl = '/assets/img/icons-vtes/disciplinas/svg';
 
   imagenSeleccionada: string | null = null;
-  isSelected: boolean = false;
+  inferiorSelect: boolean = false;
+  superiorSelect: boolean = false;
 
   disciplines: string[] = [
     'abombwe',
@@ -61,22 +62,25 @@ export class FiltroCryptComponent {
       // Verifica si ya se ha aplicado la versión superior
       if (imagenElement.src.includes('sup')) {
         // Si ya tiene la versión superior, la deselecciona
-        this.isSelected = false;
+        this.superiorSelect = false;
+        this.inferiorSelect = false;
         imagenElement.src = `${this.DisciplinesUrl}/${imagen}.svg`;
         this.imagenSeleccionada = null;
       } else {
         // Si no tiene la versión superior, la aplica
-        this.isSelected = true;
+        this.superiorSelect = true;
         imagenElement.src = `${this.DisciplinesUrl}/${imagen}sup.svg`;
       }
     } else if (this.imagenSeleccionada === null || this.imagenSeleccionada !== imagen) {
       // Si es la primera vez que se hace clic en la imagen, la selecciona
-      this.isSelected = true;
+      this.inferiorSelect = true;
+      this.superiorSelect = false;
       imagenElement.src = `${this.DisciplinesUrl}/${imagen}.svg`;
       this.imagenSeleccionada = imagen;
     } else {
       // Si ya se ha seleccionado la imagen y se hace clic nuevamente, aplica la versión superior
-      this.isSelected = true;
+      this.superiorSelect = true;
+      this.inferiorSelect = false;
       imagenElement.src = `${this.DisciplinesUrl}/${imagen}sup.svg`;
     }
   }

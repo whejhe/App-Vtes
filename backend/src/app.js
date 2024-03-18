@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import morgan from "morgan";
 import multer from "multer";
 import path from "path";
@@ -43,5 +44,15 @@ app.use(multer({ storage }).single("image"));
 
 //ROUTES
 app.use(routes);
+
+//MONGODB CONEXION
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/VtesDB", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Conectado a la base de datos');    
+}).catch((error) => {
+    console.log('Error al conectar con la base de datos',error);
+})
 
 export default app;

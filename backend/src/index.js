@@ -1,7 +1,7 @@
-import app from "./app.js";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import app from "./app.js";
 
 if(process.env.NODE_ENV !== "production"){
     dotenv.config();
