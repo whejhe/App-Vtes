@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonServiceService } from '../../../services/json-service.service';
-import { Card, Type } from '../../../models/vtes.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FiltroLibraryComponent } from "../../../components/filtro-library/filtro-library.component";
+import { FiltroLibraryComponent } from '../../../../components/filtro-library/filtro-library.component';
+import { Card, Type } from '../../../../models/vtes.model';
+import { JsonServiceService } from '../../../../services/json-service.service';
 
 @Component({
     selector: 'app-biblioteca',

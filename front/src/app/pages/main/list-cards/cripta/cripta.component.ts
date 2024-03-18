@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonServiceService } from '../../../services/json-service.service';
-import { Card, Type } from '../../../models/vtes.model';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FichaCardComponent } from "../../../components/ficha-card/ficha-card.component";
-import { FiltroCryptComponent } from "../../../components/filtro-crypt/filtro-crypt.component";
+import { FichaCardComponent } from '../../../../components/ficha-card/ficha-card.component';
+import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
+import { Card, Type } from '../../../../models/vtes.model';
+import { JsonServiceService } from '../../../../services/json-service.service';
 
 @Component({
     selector: 'app-cripta',
