@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const eventUsersSchema = new Schema({
+const postSchema = new Schema({
     id: {
         type: Number,
         unique: true,
         required: true
     },
-    eventId: {
+    foroId: {
         type: Number,
         unique: true,
         required: true
@@ -17,7 +17,15 @@ const eventUsersSchema = new Schema({
         type: Number,
         unique: true,
         required: true
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    body: {
+        type: String,
+        required: true
     }
 });
 
-export const EventUsers = mongoose.model('EventUsers', eventUsersSchema)
+export const Post = mongoose.model('Post', postSchema);
