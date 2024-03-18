@@ -19,51 +19,48 @@
       <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
         <li>
           <a href="/inicio" class="nav-link text-secondary">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#home" />
-            </svg>
             Home
           </a>
         </li>
         <li>
           <a href="/biblioteca" class="nav-link text-white">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#speedometer2" />
-            </svg>
             Library
           </a>
         </li>
         <li>
           <a href="/cripta" class="nav-link text-white">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#table" />
-            </svg>
             Crypt
           </a>
         </li>
-        <li>
-          <a href="/custom" class="nav-link text-white">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#people-circle" />
-            </svg>
+
+        <li class="nav-item text-white menu-decks">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Custom Cards
           </a>
+          <ul class="dropdown-menu decks">
+            <li><a class="dropdown-item" href="/custom">Make a Card</a></li>
+            <li><a class="dropdown-item" href="/gallery">Gallery</a></li>
+          </ul>
         </li>
-        <li>
-          <a href="/events" class="nav-link text-white">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#people-circle" />
-            </svg>
+
+        <li class="nav-item text-white menu-decks">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Events
           </a>
+          <ul class="dropdown-menu decks">
+            <li><a class="dropdown-item" href="/listar-eventos">Ver Eventos</a></li>
+            <li><a class="dropdown-item" href="/events">Crear Evento</a></li>
+          </ul>
         </li>
-        <li>
-          <a href="/ficha-deck" class="nav-link text-white">
-            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-              <use xlink:href="#people-circle" />
-            </svg>
-            Deck
+
+        <li class="nav-item text-white menu-decks">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Decks
           </a>
+          <ul class="dropdown-menu decks">
+            <li><a class="dropdown-item" href="/ficha-deck">New Deck</a></li>
+            <li><a class="dropdown-item" href="/lista-decks">List of Decks</a></li>
+          </ul>
         </li>
       </ul>
     </div>

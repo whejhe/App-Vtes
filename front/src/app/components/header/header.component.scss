@@ -39,4 +39,24 @@
 
 ul{
   margin-right: 100px;
+  padding-top: 2em;
+}
+
+.menu-decks{
+  a{
+    color: white
+  }
+}
+
+.decks{
+  background-color: #212529;
+  li{
+    padding: 0.2em;
+  }
+  a{
+    color: white
+  }
+  a:hover{
+    color: #212529
+  }
 }
