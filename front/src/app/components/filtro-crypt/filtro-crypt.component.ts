@@ -1,12 +1,13 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SearchImputComponent } from "../search-imput/search-imput.component";
 
 @Component({
-  selector: 'app-filtro-crypt',
-  standalone: true,
-  imports: [AsyncPipe,CommonModule],
-  templateUrl: './filtro-crypt.component.html',
-  styleUrl: './filtro-crypt.component.scss'
+    selector: 'app-filtro-crypt',
+    standalone: true,
+    templateUrl: './filtro-crypt.component.html',
+    styleUrl: './filtro-crypt.component.scss',
+    imports: [AsyncPipe, CommonModule, SearchImputComponent]
 })
 export class FiltroCryptComponent {
 
