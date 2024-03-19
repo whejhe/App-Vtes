@@ -1,16 +1,26 @@
 import mongoose from "mongoose";
+import connectDB from "../service/mongoDB";
+import { v4 as uuidv4 } from "uuid";
 
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
 const imageSchema = new Schema({
-    userId: {
+    _id: {
         type: Number,
-        unique: true,
+        default: uuidv4
+    },
+    userId: {
+        type: [String],
+        ref: 'User',
         required: true
     },
     name: {
         type: String,
         unique: true,
+        required: true
+    },
+    type: {
+        type: String,
         required: true
     },
     description: {
@@ -21,10 +31,11 @@ const imageSchema = new Schema({
         type: String,
         required: true
     },
-    public_id: {
-        type: String,
-        unique: true,
+    public: {
+        type: Boolean,
+        default: true,
     }
 });
 
-export const Image = model('Image', imageSchema);
+
+export const Image = connectDB.model('Image', imageSchema);

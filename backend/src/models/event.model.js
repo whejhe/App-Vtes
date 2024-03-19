@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
+import {connectDB} from "../service/mongoDB";
+import { v4 as uuidv4 } from "uuid";
+
 
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
-    id: {
+    _id: {
         type: Number,
-        unique: true,
-        required: true
+        default: uuidv4
     },
     userId: {
-        type: Number,
-        unique: true,
+        type: [String],
+        ref: 'User',
         required: true
     },
     name: {
@@ -25,6 +27,10 @@ const eventSchema = new Schema({
         type: Date,
         required: true
     }
+},
+{
+    timestamps: true
 });
 
-export const Event = mongoose.model('Event', eventSchema)
+
+export const Event = connectDB.model('Event', eventSchema)

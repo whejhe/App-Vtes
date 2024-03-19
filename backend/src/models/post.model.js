@@ -1,21 +1,23 @@
 import mongoose from "mongoose";
+import connectDB from "../service/mongoDB";
+import { v4 as uuidv4 } from "uuid";
 
 const { Schema } = mongoose;
 
+
 const postSchema = new Schema({
-    id: {
+    _id: {
         type: Number,
-        unique: true,
-        required: true
+        default: uuidv4, 
     },
     foroId: {
         type: Number,
-        unique: true,
+        ref: 'Foro',
         required: true
     },
     userId: {
-        type: Number,
-        unique: true,
+        type: String,
+        ref: 'User',
         required: true
     },
     title: {
@@ -26,6 +28,10 @@ const postSchema = new Schema({
         type: String,
         required: true
     }
-});
+},
+{
+    timestamps: true
+}); 
 
-export const Post = mongoose.model('Post', postSchema);
+
+export const Post = connectDB.model('Post', postSchema);

@@ -1,4 +1,3 @@
-import { User } from "./user.models";
 import { Cards } from "./cards.model";
 import { Deck } from "./deck.model";
 import { Event } from "./event.model";
@@ -8,8 +7,7 @@ import { Library } from "./library.model";
 import { Foro } from "./foro.model";
 import { Post } from "./post.model";
 
-export { 
-    User, 
+export  { 
     Cards,
     Deck,
     Event,

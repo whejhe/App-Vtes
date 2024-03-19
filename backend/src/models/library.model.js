@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
+import connectDB from "../service/mongoDB";
+import { v4 as uuidv4 } from "uuid";
+
 
 const { Schema } = mongoose;
 
 const librarySchema = new Schema({
-    id: {
+    _id: {
         type: Number,
-        unique: true,
-        required: true
+        default: uuidv4
     },
     userId: {
-        type: Number,
-        unique: true,
+        type: [String],
+        ref: 'User',
         required: true
     },
     name: {
@@ -18,10 +20,12 @@ const librarySchema = new Schema({
         unique: true,
         required: true
     },
-    cards: {
-        type: Array,
+    deckId: {
+        type: [Number],
+        ref: 'Deck',
         required: true
     }
 });
 
-export const Library = mongoose.model('Library', librarySchema)
+
+export const Library = connectDB.model('Library', librarySchema)

@@ -1,14 +1,19 @@
 import mongoose from "mongoose";
+import {connectDB} from "../service/mongoDB";
+import { v4 as uuidv4 } from "uuid";
+
 
 const { Schema } = mongoose;
 
 const cardsSchema = new Schema({
-    id: {
+    _id:{
         type: Number,
-        unique: true,
-        required: true
+        default: uuidv4
     },
-    deckId: Number,
+    deckId: {
+        type: Number,
+        ref: 'Deck'
+    },
     name: {
         type: String,
         unique: true,
@@ -30,4 +35,5 @@ const cardsSchema = new Schema({
     ]
 });
 
-export const Cards = mongoose.model('Cards', cardsSchema);
+
+export const Cards = connectDB.model('Cards', cardsSchema);

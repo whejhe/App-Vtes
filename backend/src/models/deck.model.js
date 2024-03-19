@@ -1,27 +1,31 @@
 import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+import {connectDB} from "../service/mongoDB";
 
 const { Schema } = mongoose;
 
 const deckSchema = new Schema({
-    id: {
+    _id: {
         type: Number,
-        unique: true,
-        required: true
+        default:uuidv4
     },
     userId: {
-        type: Number,
-        unique: true,
+        type: String,
+        ref: 'User',
         required: true
     },
     name: {
         type: String,
-        unique: true,
         required: true
     },
+    public: {
+        type: Boolean,
+        default: true,
+    },
     cards:{
-        type: Array,
-        required: true
+        type: [Number],
+        ref: 'Cards'
     }
 });
 
-export const Deck = mongoose.model('Deck', deckSchema)
+export const Deck = connectDB.model('Deck', deckSchema)

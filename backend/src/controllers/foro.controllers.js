@@ -25,7 +25,7 @@ export const getAllTopics = async (req, res) => {
 // Obtener un tema por su ID
 export const getTopicById = async (req, res) => {
     try {
-        const topic = await Foro.findById(req.params.id);
+        const topic = await Foro.findById({_id: req.params.id});
         if (!topic) {
             return res.status(404).json({ error: "Tema no encontrado" });
         }

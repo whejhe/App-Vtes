@@ -2,17 +2,13 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 dotenv.config();
+const uri = process.env.MONGODB_URL;
 
-// Conexión a la base de datos
-mongoose.connect(process.env.MONGODB_URl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
+export let connectDB = null; 
+try {
+  mongoose.set('strictQuery', false);
   console.log('Conexión exitosa a la base de datos');
-})
-.catch((error) => {
+  connectDB = mongoose.createConnection(uri)
+} catch (error) {
   console.error('Error al conectar a la base de datos:', error);
-});
-
-export default mongoose;
+}

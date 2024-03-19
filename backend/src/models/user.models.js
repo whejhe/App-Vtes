@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
-import uuid from "uuid";
+import { v4 as uuidv4 } from 'uuid';
+import { connectDB } from "../service/mongoDB.js";
 
 const { Schema } = mongoose;
 
 let validateEmail = function(email) {
     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return re.test(email);
+    return true;
 };
 
 let validatePassword = function(password) {
@@ -16,17 +17,13 @@ let validatePassword = function(password) {
         message: 'La contraseña debe tener un maximo de 20 caracteres'
         return false;
     }
-    return re.test(password);
+    return true;
 };
 
 const userSchema = new Schema({
-    id:{
+    _id:{
         type: String,
-        unique: true,
-        required: true,
-        default: () => {  
-            return uuid.v4();
-        }      
+        default: uuidv4     
     },
     role:{
         type: String,
@@ -78,7 +75,9 @@ const userSchema = new Schema({
         }
     },
 }, {
-    timestamps: true
+    timestamps: true,
+    versionKey: false,
+    autoCreate: false
 });
 
-export const User = mongoose.model('User', userSchema);
+export const User = connectDB.model('User', userSchema);

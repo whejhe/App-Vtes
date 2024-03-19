@@ -1,26 +1,32 @@
 import mongoose from "mongoose";
+import {connectDB} from "../service/mongoDB.js";
+import { v4 as uuidv4 } from "uuid";
+
 
 const { Schema } = mongoose;
 
 const foroSchema = new Schema({
-    id: {
+    _id: {
         type: Number,
-        unique: true,
-        required: true
+        default: uuidv4
     },
     userId: {
-        type: Number,
-        unique: true,
+        type: String,
+        ref: 'User',
         required: true
     },
     title: {
         type: String,
-        required: true
+        required: true,
+        // select: false,
     },
     body: {
         type: String,
         required: true
     }
+},{
+    timestamps: true
 });
 
-export const Foro = mongoose.model('Foro', foroSchema)
+
+export const Foro = connectDB.model('Foro', foroSchema);
