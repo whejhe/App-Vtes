@@ -1,7 +1,12 @@
+.formulario{
+  background-color: #d8d7d7;
+}
+
 .container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 5em;
 }
 
 .custom-card{
@@ -132,4 +137,8 @@
   border-radius: 8px;
   width: 40%;
   padding: 1em;
+}
+
+.description{
+  margin-top: 1em;
 }

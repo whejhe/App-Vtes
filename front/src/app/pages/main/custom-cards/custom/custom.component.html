@@ -52,7 +52,7 @@
         <div class="mb-3">
           <label for="clan" class="form-label">Clan</label>
           <select class="form-select" id="clan" name="clan">
-            <option value="" *ngFor="let clan of clans" [value]="clan">{{clan}}</option>
+            <option>clan</option>
             <!-- <option value="brujah">Brujah</option>
             <option value="caitiff">Caitiff</option>
             <option value="malkavian">Malkavian</option>
@@ -81,17 +81,30 @@
         </div>
 
         <div class="mb-3">
-          <label for="blood" class="form-label">Disciplinas</label>
-          <input type="checkbox" class="form-check-input" id="blood" name="blood" value="Animalismo">
+          <label for="disciplines" class="form-label">Disciplinas</label>
+          <select class="form-select" id="disciplines" name="disciplines">
+            <option>Disciplines</option>
+          </select>
         </div>
 
-
-        <div class="mb-3">
-          <label for="grupo" class="form-label">Grupo</label>
-          <input type="number" min="1" max="7" class="form-control" id="grupo" name="grupo">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="grupo" class="form-label">Grupo</label>
+            <input type="number" min="1" max="7" class="form-control" id="grupo" name="grupo">
+          </div>
+          <div class="col-md-6">
+            <label for="logo-color" class="form-label">Color logo</label>
+            <select class="form-select" name="logo-color" id="logo-color">
+              <option value="red">Rojo</option>
+              <option value="green">Verde</option>
+              <option value="blue">Azul</option>
+              <option value="black">Negro</option>
+              <option value="white">Blanco</option>
+            </select>
+          </div>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 description">
           <textarea placeholder="Descripción" class="form-control" id="description" name="description"></textarea>
         </div>
 

@@ -1,6 +1,3 @@
-DESPLIEGUE
-https://vtes-forever.vercel.app/main/biblioteca
-
 GENERAR INTERFACE APARTIR DE JSON
 https://app.quicktype.io/
 
@@ -27,16 +24,12 @@ https://www.youtube.com/watch?v=VDfvkWrjzXE&t=151s
 TRANSICIONES
 https://www.youtube.com/watch?v=wSrGSNYikEk
 
-LOGIN Y REGISTER (FIREBASE)
-https://www.youtube.com/watch?v=8VTxuIvMTlc
 
-CRUD CON FIREBASE
-https://www.youtube.com/watch?v=t_YSrxj0wGY&t=102s
-
-ENLACE
-https://supabase.com/
-https://vercel.com/carlos-projects-4dce2127
+DESPLIEGUE
+https://vtes-forever.vercel.app/main/biblioteca
 https://aws.amazon.com/es/
+https://cloud.mongodb.com/v2/65f7eb073f265f287debd21a#/overview
+https://console.cloudinary.com/pm/c-6dc37d32fdbb0bb5da05d0cad6a57d/getting-started
 
 INTEGRACION BOOTSTRAP EN ANGULAR
 https://fbellod.medium.com/como-integrar-el-framework-bootstrap-en-un-proyecto-angular-a5d53fa79e03
