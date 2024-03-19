@@ -11,6 +11,14 @@
     border-bottom: 2px solid #212529;
 }
 
+.profile{
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    border: 2px solid rgb(107, 105, 105);
+    border-radius: 50%;
+}
+
 .input{
     margin: 0;
     padding: 0;
@@ -19,9 +27,9 @@
 .container-logo{
   position: fixed;
   display: inline;
-  width: 40px;
+  width: 30px;
   top: 10px;
-  left: 2%;
+  left: 150px;
   .logo{
     width: 60px
   }
