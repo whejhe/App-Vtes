@@ -5,6 +5,8 @@ import { FichaCardComponent } from '../../../../components/ficha-card/ficha-card
 import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
+import { DetailsCardComponent } from '../../../../components/details-card/details-card.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector: 'app-cripta',
@@ -12,10 +14,11 @@ import { JsonServiceService } from '../../../../services/json-service.service';
     templateUrl: './cripta.component.html',
     styleUrl: './cripta.component.scss',
     imports: [
-      AsyncPipe, 
-      CommonModule, 
-      FichaCardComponent, 
+      AsyncPipe,
+      CommonModule,
+      FichaCardComponent,
       FiltroCryptComponent,
+      DetailsCardComponent
     ]
 })
 export class CriptaComponent implements OnInit {
@@ -24,7 +27,8 @@ export class CriptaComponent implements OnInit {
 
 
   constructor(
-    private jsonSvc: JsonServiceService
+    private jsonSvc: JsonServiceService,
+    public dialog: MatDialog
   ) {}
 
   setUrlImage(url: string):void {
@@ -43,6 +47,10 @@ export class CriptaComponent implements OnInit {
           (card.types.includes(Type.Vampire)) || (card.types.includes(Type.Imbued))));
       }
     )
+  }
+
+  openModal(){
+    this.dialog.open(DetailsCardComponent);
   }
 
   ngOnInit(): void {
