@@ -8,19 +8,29 @@ const { Schema } = mongoose;
 
 const eventUsersSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default: uuidv4
     },
     eventId: {
-        type: Number,
+        type: String,
         ref: 'Event',
-        required: true
+        required: [true, 'El identificador del evento es obligatorio']
     },
     userId: {
         type: String,
         ref: 'User',
-        required: true
-    }
+        required: [true, 'El identificador de usuario es obligatorio']
+    },
+    score: {
+        type: Number,
+        default : 0
+    },
+    registrationStatus: {
+        type: String,
+        enum: ['confirmed', 'pending', 'cancelled', 'abandoned'],
+        default: 'pending'
+    },
+    
 });
 
 

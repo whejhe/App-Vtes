@@ -6,30 +6,30 @@ const { Schema } = mongoose;
 
 const imageSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default: uuidv4
     },
     userId: {
-        type: [String],
+        type: String,
         ref: 'User',
-        required: true
+        required: [true, 'El identificador de usuario es obligatorio']
     },
     name: {
         type: String,
         unique: true,
-        required: true
+        required: [true, 'El nombre de la imagen es obligatorio']
     },
     type: {
         type: String,
-        required: true
+        required: [true, 'El tipo de la imagen es obligatorio']
     },
     description: {
         type: String,
-        required: true
+        required: [true, 'La descripción de la imagen es obligatoria']
     },
     imageUrl: {
         type: String,
-        required: true
+        required: [true, 'La URL de la imagen es obligatoria']
     },
     public: {
         type: Boolean,

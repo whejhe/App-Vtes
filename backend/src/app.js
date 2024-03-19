@@ -6,7 +6,7 @@ import exphbs from "express-handlebars";
 import routes from "./routes/index.js";
 import "./service/mongoDB.js";
 import dotenv from "dotenv";
-import { User } from "./models/user.models.js";
+import multerMiddleware from "./middlewares/multer.middleware.js";
 
 dotenv.config();
 
@@ -34,14 +34,16 @@ app.set("view engine", ".hbs");
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const storage = multer.diskStorage({
-    destination: path.join(__dirname, "public/uploads"),
-    filename: (req, file, cb) => {
-        cb(null, new Date().getTime() + path.extname(file.originalname));
-        console.log(file);
-    }
-});
-app.use(multer({ storage }).single("image"));
+// const storage = multer.diskStorage({
+//     destination: path.join(__dirname, "public/uploads"),
+//     filename: (req, file, cb) => {
+//         cb(null, new Date().getTime() + path.extname(file.originalname));
+//         console.log(file);
+//     }
+// });
+// app.use(multer({ storage }).single("image"));
+app.use(multerMiddleware);
+app.use(express.static(path.join(__dirname, "public")));
 
 //ROUTES
 app.use(routes);

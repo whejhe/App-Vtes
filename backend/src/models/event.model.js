@@ -7,25 +7,25 @@ const { Schema } = mongoose;
 
 const eventSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default: uuidv4
     },
-    userId: {
-        type: [String],
+    creatorId: {
+        type: String,
         ref: 'User',
-        required: true
+        required: [true, 'El identificador del creador es obligatorio']
     },
     name: {
         type: String,
-        required: true
+        required: [true, 'El nombre del evento es obligatorio']
     },
     description: {
         type: String,
-        required: true
+        required: [true, 'La descripción del evento es obligatoria']
     },
     date: {
         type: Date,
-        required: true
+        required: [true, 'La fecha del evento es obligatoria']
     }
 },
 {

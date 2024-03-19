@@ -6,24 +6,24 @@ const { Schema } = mongoose;
 
 const deckSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default:uuidv4
     },
     userId: {
         type: String,
         ref: 'User',
-        required: true
+        required: [true, 'El identificador de usuario es obligatorio']
     },
     name: {
         type: String,
-        required: true
+        required: [true, 'El nombre del mazo es obligatorio']
     },
     public: {
         type: Boolean,
         default: true,
     },
-    cards:{
-        type: [Number],
+    cardIds:{
+        type: [String],
         ref: 'Cards'
     }
 });

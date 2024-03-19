@@ -7,26 +7,26 @@ const { Schema } = mongoose;
 
 const postSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default: uuidv4, 
     },
-    foroId: {
-        type: Number,
+    forumId: {
+        type: String,
         ref: 'Foro',
-        required: true
+        required: [true, 'El identificador del foro es obligatorio']
     },
-    userId: {
+    authorId: {
         type: String,
         ref: 'User',
-        required: true
+        required: [true, 'El identificador de usuario es obligatorio']
     },
     title: {
         type: String,
-        required: true
+        required: [true, 'El título del post es obligatorio']
     },
-    body: {
+    content: {
         type: String,
-        required: true
+        required: [true, 'El contenido del post es obligatorio']
     }
 },
 {

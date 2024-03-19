@@ -7,23 +7,23 @@ const { Schema } = mongoose;
 
 const librarySchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         default: uuidv4
     },
-    userId: {
-        type: [String],
+    ownerId: {
+        type: String,
         ref: 'User',
-        required: true
+        required: [true, 'El identificador del propietario es obligatorio']
     },
     name: {
         type: String,
         unique: true,
-        required: true
+        required: [true, 'El nombre de la biblioteca es obligatorio']
     },
-    deckId: {
-        type: [Number],
+    deckIds: {
+        type: [String],
         ref: 'Deck',
-        required: true
+        required: [true, 'Los identificadores de los mazos son obligatorios']
     }
 });
 

@@ -3,8 +3,8 @@ import Foro from "../models/Foro";
 // Crear un nuevo tema en el foro
 export const createTopic = async (req, res) => {
     try {
-        const { id, userId, title, body } = req.body;
-        const newTopic = new Foro({ id, userId, title, body });
+        const { id, userId, title, content } = req.body;
+        const newTopic = new Foro({ id, userId, title, content });
         await newTopic.save();
         res.status(201).json(newTopic);
     } catch (error) {
