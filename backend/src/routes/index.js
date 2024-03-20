@@ -27,8 +27,4 @@ router.use("/customCards",customCardsRoute);
 router.use("/cards",cardsRoute);
 
 
-router.get("/", (req, res) => {
-   res.send("Hello World"); 
-});
-
 export default router;

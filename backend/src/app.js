@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from "morgan";
-import multer from "multer";
+// import multer from "multer";
 import path from "path";
 import exphbs from "express-handlebars";
 import routes from "./routes/index.js";
@@ -13,12 +13,12 @@ dotenv.config();
 const __dirname = path.resolve();
 
 // Crear una instancia de Handlebars
-const hbs = exphbs.create({
-    defaultLayout: "main",
-    layoutsDir: path.join(__dirname, "views/layouts"),
-    partialsDir: path.join(__dirname, "views/partials"),
-    extname: ".hbs",
-});
+// const hbs = exphbs.create({
+//     defaultLayout: "main",
+//     layoutsDir: path.join(__dirname, "views/layouts"),
+//     partialsDir: path.join(__dirname, "views/partials"),
+//     extname: ".hbs",
+// });
 
 //INICIANDO
 const app = express();
@@ -26,9 +26,9 @@ const app = express();
 
 //CONFIGURACIONES
 app.set("port", process.env.PORT || 3000);
-app.set("views", path.join(__dirname, "views"));
-app.engine(".hbs", hbs.engine);
-app.set("view engine", ".hbs");
+// app.set("views", path.join(__dirname, "views"));
+// app.engine(".hbs", hbs.engine);
+// app.set("view engine", ".hbs");
 
 //MIDDLEWARES
 app.use(morgan("dev"));
@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 // });
 // app.use(multer({ storage }).single("image"));
 app.use(multerMiddleware);
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 //ROUTES
 app.use(routes);
