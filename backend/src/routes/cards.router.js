@@ -1,7 +1,9 @@
 import express from 'express';
-import { createCard, getCardsByDeckId, updateCard, deleteCard } from '../controllers/cardsControllers.js';
+import { cardsControllers } from '../controllers/index.js';
 
 const router = express.Router();
+
+const { createCard, getCardsByDeckId, updateCard, deleteCard } = cardsControllers;
 
 // Rutas para la entidad Cards
 router.post('/card', createCard);

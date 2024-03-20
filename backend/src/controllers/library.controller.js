@@ -65,10 +65,12 @@ const deleteLibrary = async (req, res) => {
     }
 };
 
-export {
+const libraryControllers = {
     createLibrary,
     getLibraries,
     getLibraryById,
     updateLibrary,
     deleteLibrary
 };
+
+export default libraryControllers;

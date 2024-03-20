@@ -65,10 +65,12 @@ const deleteMessage = async (req, res) => {
     }
 };
 
-export {
+const messageControllers = {
     createMessage,
     getMessages,
     getMessageById,
     updateMessage,
     deleteMessage
 };
+
+export default messageControllers;

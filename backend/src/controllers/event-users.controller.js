@@ -39,8 +39,10 @@ const updateRegistrationStatus = async (req, res) => {
     }
 };
 
-export {
+const eventUsersControllers = {
     assignUserToEvent,
     getUsersForEvent,
     updateRegistrationStatus
 };
+
+export default eventUsersControllers;

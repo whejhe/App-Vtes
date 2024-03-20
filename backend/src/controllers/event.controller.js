@@ -65,10 +65,12 @@ const deleteEvent = async (req, res) => {
     }
 };
 
-export {
+const eventControllers = {
     createEvent,
     getEvents,
     getEventById,
     updateEvent,
     deleteEvent
 };
+
+export default eventControllers;

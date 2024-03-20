@@ -56,9 +56,11 @@ const addCardToDeck = async (req, res) => {
     }
 };
 
-export {
+const deckControllers = {
     createDeck,
     getDecksByUserId,
     updateDeckVisibility,
     addCardToDeck
 };
+
+export default deckControllers;

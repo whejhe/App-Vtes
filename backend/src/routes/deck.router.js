@@ -1,7 +1,10 @@
 import express from 'express';
-import { createDeck, getDecksByUserId, updateDeckVisibility, addCardToDeck } from '../controllers/deck.controllers.js';
+// import { createDeck, getDecksByUserId, updateDeckVisibility, addCardToDeck } from '../controllers/deck.controllers.js';
+import { deckControllers } from '../controllers/index.js';
 
 const router = express.Router();
+
+const { createDeck, getDecksByUserId, updateDeckVisibility, addCardToDeck } = deckControllers;
 
 // Rutas para la entidad Deck
 router.post('deck/', createDeck);

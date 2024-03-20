@@ -1,7 +1,9 @@
 import express from 'express';
-import { createCustomCard, getCustomCardsByDeckId, updateCustomCard, deleteCustomCard } from '../controllers/customCardsControllers.js';
+import { customCardsControllers } from '../controllers/index.js';
 
 const router = express.Router();
+
+const { createCustomCard, getCustomCardsByDeckId, updateCustomCard, deleteCustomCard } = customCardsControllers;
 
 // Rutas para la entidad Cards
 router.post('customCard/', createCustomCard);

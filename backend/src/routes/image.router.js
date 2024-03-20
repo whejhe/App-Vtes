@@ -1,7 +1,10 @@
 import express from 'express';
-import { createImage, getImages, getImageById, updateImage, deleteImage } from '../controllers/image.controller.js';
+// import { createImage, getImages, getImageById, updateImage, deleteImage } from '../controllers/image.controller.js';
+import { imageControllers } from '../controllers/index.js';
 
 const router = express.Router();
+
+const { createImage, getImages, getImageById, updateImage, deleteImage } = imageControllers;
 
 // Rutas para la entidad Image
 router.post('/image', createImage);

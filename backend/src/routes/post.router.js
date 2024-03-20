@@ -1,7 +1,10 @@
 import express from 'express';
-import { createPost, getPosts, getPostById, updatePost, deletePost } from '../controllers/post.controllers.js';
+// import { createPost, getPosts, getPostById, updatePost, deletePost } from '../controllers/post.controllers.js';
+import { postControllers } from '../controllers/index.js';
 
 const router = express.Router();
+
+const { createPost, getPosts, getPostById, updatePost, deletePost } = postControllers;
 
 // Rutas para la entidad Post
 router.post('post/', createPost);

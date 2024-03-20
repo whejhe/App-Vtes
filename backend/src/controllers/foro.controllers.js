@@ -65,10 +65,12 @@ const deleteForo = async (req, res) => {
     }
 };
 
-export {
+const foroControllers = {
     createForo,
     getForos,
     getForoById,
     updateForo,
     deleteForo
 };
+
+export default foroControllers;

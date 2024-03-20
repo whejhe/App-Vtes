@@ -65,10 +65,12 @@ const deleteImage = async (req, res) => {
     }
 };
 
-export {
+const imageControllers = {
     createImage,
     getImages,
     getImageById,
     updateImage,
     deleteImage
 };
+
+export default imageControllers;

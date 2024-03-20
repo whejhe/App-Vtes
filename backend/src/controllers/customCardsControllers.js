@@ -53,9 +53,11 @@ const deleteCustomCard = async (req, res) => {
     }
 };
 
-export {
+const customCardsControllers = {
     createCustomCard,
     getCustomCardsByDeckId,
     updateCustomCard,
     deleteCustomCard
 };
+
+export default customCardsControllers;

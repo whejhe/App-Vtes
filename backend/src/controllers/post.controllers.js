@@ -65,10 +65,12 @@ const deletePost = async (req, res) => {
     }
 };
 
-export {
+const postControllers = {
     createPost,
     getPosts,
     getPostById,
     updatePost,
     deletePost
 };
+
+export default postControllers;
