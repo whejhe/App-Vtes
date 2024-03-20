@@ -4,24 +4,10 @@ import { connectDB } from "../service/mongoDB.js";
 
 const { Schema } = mongoose;
 
-// let validateEmail = function(email) {
-//     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     return true;
-// };
 
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 
-// let validatePassword = function(password) {
-//     if(password.length < 8){
-//         message: 'La contraseña debe tener al menos 8 caracteres'
-//         return false;
-//     }else if(password.length > 20){
-//         message: 'La contraseña debe tener un maximo de 20 caracteres'
-//         return false;
-//     }
-//     return true;
-// };
 
 const userSchema = new Schema({
     _id:{
@@ -30,7 +16,12 @@ const userSchema = new Schema({
     },
     role:{
         type: String,
-        default: "user"
+        enum: ["ADMIN", "USER","COLLABORATOR", "GUEST"],
+        default: "USER"
+    },
+    permissions:{
+        type: [String],
+        default: []
     },
     name:{
         type: String,
