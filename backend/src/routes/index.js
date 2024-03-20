@@ -12,7 +12,7 @@ import eventRoute from "./event.router.js";
 import eventUserRoute from "./event-users.router.js";
 import deckRoute from "./deck.router.js";
 import customCardsRoute from "./customCardsRouter.js";
-import cards from "./cards.router.js";
+import cardsRoute from "./cards.router.js";
 
 router.use("/users", userRouter);
 router.use("/posts", post);
@@ -24,7 +24,7 @@ router.use("/event",eventRoute);
 router.use("/eventUser",eventUserRoute);
 router.use("/deck",deckRoute);
 router.use("/customCards",customCardsRoute);
-router.use("/cards",cards);
+router.use("/cards",cardsRoute);
 
 
 router.get("/", (req, res) => {

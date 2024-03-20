@@ -4,9 +4,9 @@ import { createCustomCard, getCustomCardsByDeckId, updateCustomCard, deleteCusto
 const router = express.Router();
 
 // Rutas para la entidad Cards
-router.post('/', createCustomCard);
-router.get('/:deckId', getCustomCardsByDeckId);
-router.put('/:id', updateCustomCard);
-router.delete('/:id', deleteCustomCard);
+router.post('customCard/', createCustomCard);
+router.get('customCards/:deckId', getCustomCardsByDeckId);
+router.put('customCards/:id', updateCustomCard);
+router.delete('customCards/:id', deleteCustomCard);
 
 export default router;

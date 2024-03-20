@@ -4,10 +4,10 @@ import { createPost, getPosts, getPostById, updatePost, deletePost } from '../co
 const router = express.Router();
 
 // Rutas para la entidad Post
-router.post('/', createPost);
-router.get('/', getPosts);
-router.get('/:id', getPostById);
-router.put('/:id', updatePost);
-router.delete('/:id', deletePost);
+router.post('post/', createPost);
+router.get('posts/', getPosts);
+router.get('posts/:id', getPostById);
+router.put('posts/:id', updatePost);
+router.delete('posts/:id', deletePost);
 
 export default router;

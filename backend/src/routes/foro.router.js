@@ -4,10 +4,10 @@ import { createForo, getForos, getForoById, updateForo, deleteForo } from '../co
 const router = express.Router();
 
 // Rutas para la entidad Foro
-router.post('/', createForo);
-router.get('/', getForos);
-router.get('/:id', getForoById);
-router.put('/:id', updateForo);
-router.delete('/:id', deleteForo);
+router.post('foro/', createForo);
+router.get('foros/', getForos);
+router.get('foros/:id', getForoById);
+router.put('foros/:id', updateForo);
+router.delete('foros/:id', deleteForo);
 
 export default router;

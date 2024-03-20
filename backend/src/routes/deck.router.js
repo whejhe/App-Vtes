@@ -4,9 +4,9 @@ import { createDeck, getDecksByUserId, updateDeckVisibility, addCardToDeck } fro
 const router = express.Router();
 
 // Rutas para la entidad Deck
-router.post('/', createDeck);
-router.get('/:userId', getDecksByUserId);
-router.put('/:id/visibility', updateDeckVisibility);
-router.put('/:id/add-card', addCardToDeck);
+router.post('deck/', createDeck);
+router.get('decks/:userId', getDecksByUserId);
+router.put('decks/:id/visibility', updateDeckVisibility);
+router.put('decks/:id/add-card', addCardToDeck);
 
 export default router;

@@ -4,8 +4,8 @@ import { assignUserToEvent, getUsersForEvent, updateRegistrationStatus } from '.
 const router = express.Router();
 
 // Rutas para la entidad EventUsers
-router.post('/', assignUserToEvent);
-router.get('/:eventId', getUsersForEvent);
-router.put('/:id', updateRegistrationStatus);
+router.post('event/user', assignUserToEvent);
+router.get('event/users/:eventId', getUsersForEvent);
+router.put('event/users/:id', updateRegistrationStatus);
 
 export default router;
