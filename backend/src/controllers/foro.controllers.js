@@ -1,64 +1,74 @@
-import Foro from "../models/Foro";
+// Importa el modelo de Foro
+import { Foro } from "../models/foro.model.js";
 
-// Crear un nuevo tema en el foro
-export const createTopic = async (req, res) => {
+// Crear un nuevo foro
+const createForo = async (req, res) => {
     try {
-        const { id, userId, title, content } = req.body;
-        const newTopic = new Foro({ id, userId, title, content });
-        await newTopic.save();
-        res.status(201).json(newTopic);
+        const { userId, title, content } = req.body;
+        const newForo = new Foro({ userId, title, content });
+        await newForo.save();
+        res.status(201).json(newForo);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-// Obtener todos los temas del foro
-export const getAllTopics = async (req, res) => {
+// Obtener todos los foros
+const getForos = async (req, res) => {
     try {
-        const topics = await Foro.find();
-        res.status(200).json(topics);
+        const foros = await Foro.find();
+        res.status(200).json(foros);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-// Obtener un tema por su ID
-export const getTopicById = async (req, res) => {
+// Obtener un foro por ID
+const getForoById = async (req, res) => {
     try {
-        const topic = await Foro.findById({_id: req.params.id});
-        if (!topic) {
-            return res.status(404).json({ error: "Tema no encontrado" });
+        const foro = await Foro.findById(req.params.id);
+        if (!foro) {
+            return res.status(404).json({ error: "Foro no encontrado" });
         }
-        res.status(200).json(topic);
+        res.status(200).json(foro);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-// Actualizar un tema por su ID
-export const updateTopic = async (req, res) => {
+// Actualizar un foro por ID
+const updateForo = async (req, res) => {
     try {
-        const topic = await Foro.findByIdAndUpdate(req.params.id, req.body, {
+        const foro = await Foro.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
         });
-        if (!topic) {
-            return res.status(404).json({ error: "Tema no encontrado" });
+        if (!foro) {
+            return res.status(404).json({ error: "Foro no encontrado" });
         }
-        res.status(200).json(topic);
+        res.status(200).json(foro);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-// Eliminar un tema por su ID
-export const deleteTopic = async (req, res) => {
+// Eliminar un foro por ID
+const deleteForo = async (req, res) => {
     try {
-        const deletedTopic = await Foro.findByIdAndDelete(req.params.id);
-        if (!deletedTopic) {
-            return res.status(404).json({ error: "Tema no encontrado" });
+        const { id } = req.params;
+        const foro = await Foro.findByIdAndDelete(id);
+        if (!foro) {
+            return res.status(404).json({ error: "Foro no encontrado" });
         }
-        res.status(200).json({ message: "Tema eliminado correctamente" });
+        res.status(200).json({ message: "Foro eliminado correctamente" });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
+};
+
+export {
+    createForo,
+    getForos,
+    getForoById,
+    updateForo,
+    deleteForo
 };

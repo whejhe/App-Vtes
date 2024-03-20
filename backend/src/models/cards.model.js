@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import {connectDB} from "../service/mongoDB";
+import { connectDB } from "../service/mongoDB.js";
 import { v4 as uuidv4 } from "uuid";
 
 
 const { Schema } = mongoose;
 
 const cardsSchema = new Schema({
-    _id:{
+    _id: {
         type: String,
         default: uuidv4
     },
@@ -28,12 +28,13 @@ const cardsSchema = new Schema({
         type: String,
         required: [true, 'La descripción de la carta es obligatoria']
     },
-    type: [
-        {
-            type: String
-        }
-    ]
+    type: {
+        type: String,
+        required: [true, 'El tipo de la carta es obligatoria']
+    }
 });
 
 
-export const Cards = connectDB.model('Cards', cardsSchema);
+const Cards = connectDB.model('Cards', cardsSchema);
+
+export default Cards;

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import connectDB from "../service/mongoDB";
+import { connectDB } from "../service/mongoDB.js";
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -28,4 +28,6 @@ const librarySchema = new Schema({
 });
 
 
-export const Library = connectDB.model('Library', librarySchema)
+const Library = connectDB.model('Library', librarySchema)
+
+export default Library;

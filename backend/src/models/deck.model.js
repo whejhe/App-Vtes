@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { v4 as uuidv4 } from "uuid";
-import {connectDB} from "../service/mongoDB";
+import {connectDB} from "../service/mongoDB.js";
 
 const { Schema } = mongoose;
 
@@ -18,7 +18,7 @@ const deckSchema = new Schema({
         type: String,
         required: [true, 'El nombre del mazo es obligatorio']
     },
-    public: {
+    publico: {
         type: Boolean,
         default: true,
     },

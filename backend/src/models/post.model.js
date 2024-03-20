@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import connectDB from "../service/mongoDB";
 import { v4 as uuidv4 } from "uuid";
+import { connectDB } from "../service/mongoDB.js";
 
 const { Schema } = mongoose;
 
@@ -34,4 +34,6 @@ const postSchema = new Schema({
 }); 
 
 
-export const Post = connectDB.model('Post', postSchema);
+const Post = connectDB.model('Post', postSchema);
+
+export default Post;

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { v4 as uuidv4 } from 'uuid';
 import { connectDB } from "../service/mongoDB.js";
+import { permissions } from "../middlewares/permissions.js";
 
 const { Schema } = mongoose;
 
@@ -21,19 +22,13 @@ const userSchema = new Schema({
     },
     permissions:{
         type: [String],
-        default: []
+        default: permissions.USER
     },
     name:{
         type: String,
         required: [true, 'El nombre es obligatorio'],
         minlength: [3, 'El nombre debe tener al menos 3 caracteres'],
         maxlength: [30, 'El nombre debe tener un maximo de 30 caracteres'],
-        // validate:{
-        //     validator: function(v){
-        //         return this.valueOf.length > 3 && this.valueOf.length < 30
-        //     },
-        //     message: 'El nombre debe tener entre 3 y 30 caracteres',
-        // }
     },
     nick:{
         type: String,
@@ -41,12 +36,6 @@ const userSchema = new Schema({
         required: [true, 'El nick de usuario es obligatorio'],
         minlength: [3, 'El nick debe tener al menos 3 caracteres'],
         maxlength: [30, 'El nick debe tener un maximo de 20 caracteres'],
-        // validate:{
-        //     validator: function(v){
-        //         return this.valueOf.length > 3 && this.valueOf.length < 30
-        //     },
-        //     message: 'El nick debe tener entre 3 y 30 caracteres',
-        // }
     },
     email:{
         type: String,
@@ -65,12 +54,8 @@ const userSchema = new Schema({
         minlength: [8, 'La contraseña debe tener al menos 8 caracteres'],
         validate:{
             validator: (v) => passwordRegex.test(v),
-            message: 'La contraseña debe contener al menos 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial'
+            message: 'La contraseña debe contener al menos 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial de entre !@#$%^&*'
         }
-        // validate: {
-        //     validator: validatePassword,
-        //     message: 'La contraseña no es valida',
-        // }
     },
 }, {
     timestamps: true,
@@ -78,4 +63,6 @@ const userSchema = new Schema({
     autoCreate: false
 });
 
-export const User = connectDB.model('User', userSchema);
+const User = connectDB.model('User', userSchema);
+
+export default User;

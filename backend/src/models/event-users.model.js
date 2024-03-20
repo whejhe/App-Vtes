@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-import {connectDB} from "../service/mongoDB";
 import { v4 as uuidv4 } from "uuid";
-
+import {connectDB} from "../service/mongoDB.js";
 
 
 const { Schema } = mongoose;
@@ -34,4 +33,6 @@ const eventUsersSchema = new Schema({
 });
 
 
-export const EventUsers = connectDB.model('EventUsers', eventUsersSchema)
+const EventUsers = connectDB.model('EventUsers', eventUsersSchema);
+
+export default EventUsers;

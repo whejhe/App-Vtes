@@ -1,14 +1,18 @@
 import User from "../models/user.models.js";
-import { permissions } from '../middlewares/permissions.js';
 
-// Iniciar sesión de usuario
-export const loginUser = async (req, res) => {
+// // Iniciar sesión de usuario
+const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log('Request',req.body)
+        console.log('Email: ', email, 'Password: ', password);
         // Buscar el usuario por email y contraseña
-        const user = await User.findOne({ email, password });
-        if (!user) {
-            return res.status(401).json({ error: "Credenciales inválidas" });
+        const user = await User.findOne({ email });
+        console.log('Usuario encontrado: ', user);
+        if(!user){
+            return res.status(401).json({ error: "El usuario no existe" });
+        }else if(user.password !== password){
+            return res.status(401).json({ error: "Contraseña incorrecta"});
         }
         res.status(200).json(user);
     } catch (error) {
@@ -17,17 +21,18 @@ export const loginUser = async (req, res) => {
 };
 
 
+
 // Registrar un nuevo usuario
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
     try {
-        const { name, nick, email, password } = req.body;
+        const { name, nick, email, password, role, permissions } = req.body;
         // Verificar si el usuario ya existe
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ error: "El usuario ya existe" });
         }
         // Crear un nuevo usuario
-        const newUser = new User({ name, nick, email, password });
+        const newUser = new User({ name, nick, email, password, role, permissions });
         await newUser.save();
         res.status(201).json(newUser);
     } catch (error) {
@@ -37,7 +42,7 @@ export const registerUser = async (req, res) => {
 
 
 // Crear un usuario
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
     try {
         // Verificar si el usuario tiene permisos de administrador
         if (!req.user.permissions.includes('editUserRoles')) {
@@ -53,7 +58,7 @@ export const createUser = async (req, res) => {
 };
 
 // Leer todos los usuarios
-export const getUsers = async (req, res) => {
+const getUsers = async (req, res) => {
     try {
         const users = await User.find();
         res.status(200).json(users);
@@ -63,7 +68,7 @@ export const getUsers = async (req, res) => {
 };
 
 // Leer un usuario por ID
-export const getUserById = async (req, res) => {
+const getUserById = async (req, res) => {
     try {
         const user = await User.findById({_id:req.params.id});
         if (!user) {
@@ -76,7 +81,7 @@ export const getUserById = async (req, res) => {
 };
 
 // Actualizar un usuario por ID
-export const updateUser = async (req, res) => {
+const updateUser = async (req, res) => {
     try {
         const user = await User.findByIdAndUpdate({_id:req.params.id}, req.body, {
             new: true,
@@ -91,7 +96,7 @@ export const updateUser = async (req, res) => {
 };
 
 // Eliminar un usuario por ID
-export const deleteUser = async (req, res) => {
+const deleteUser = async (req, res) => {
     try {
         // Verificar si el usuario tiene permisos de administrador
         if (!req.user.permissions.includes('deleteUser')) {
@@ -106,4 +111,14 @@ export const deleteUser = async (req, res) => {
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
+};
+
+export  {
+    loginUser,
+    registerUser,
+    createUser,
+    getUsers,
+    getUserById,
+    updateUser,
+    deleteUser
 };

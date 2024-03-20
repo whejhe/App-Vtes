@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import connectDB from "../service/mongoDB";
+import {connectDB} from "../service/mongoDB.js";
 import { v4 as uuidv4 } from "uuid";
 
 const { Schema } = mongoose;
@@ -38,4 +38,6 @@ const imageSchema = new Schema({
 });
 
 
-export const Image = connectDB.model('Image', imageSchema);
+const Image = connectDB.model('Image', imageSchema);
+
+export default Image;
