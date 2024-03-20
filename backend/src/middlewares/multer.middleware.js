@@ -4,7 +4,7 @@ import path from "path";
 const __dirname = path.resolve();
 
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, "../public/uploads"),
+    destination: path.join(__dirname, "/uploads"),
     filename: (req, file, cb) => {
         cb(null, new Date().getTime() + path.extname(file.originalname));
     }
