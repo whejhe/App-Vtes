@@ -1,5 +1,6 @@
 import express from "express";
 import router from "./routes/user.router.js";
+// import router from "./routes/index.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import app from "./app.js";
@@ -11,6 +12,7 @@ if(process.env.NODE_ENV !== "production"){
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(router);
 app.use(router);
 
 app.listen(app.get("port"), () => {

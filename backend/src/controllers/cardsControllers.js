@@ -13,6 +13,30 @@ const createCard = async (req, res) => {
     }
 };
 
+// Obtener todas las cartas
+const getCards = async (req, res) => {
+    try {
+        const cards = await Cards.find();
+        res.status(200).json(cards);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Obtener una carta por ID
+const getCardsById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const card = await Cards.findById(id);
+        if (!card) {
+            return res.status(404).json({ error: "Carta no encontrada" });
+        }
+        res.status(200).json(card);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
 // Obtener todas las cartas de un mazo
 const getCardsByDeckId = async (req, res) => {
     try {
@@ -55,6 +79,8 @@ const deleteCard = async (req, res) => {
 
 const cardsControllers = {
     createCard,
+    getCards,
+    getCardsById,
     getCardsByDeckId,
     updateCard,
     deleteCard
