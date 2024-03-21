@@ -4,6 +4,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FiltroLibraryComponent } from '../../../../components/filtro-library/filtro-library.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
+import { FiltradoPipe } from '../../../../pipes/filtrado.pipe';
 
 @Component({
     selector: 'app-biblioteca',
@@ -11,8 +12,8 @@ import { JsonServiceService } from '../../../../services/json-service.service';
     templateUrl: './biblioteca.component.html',
     styleUrl: './biblioteca.component.scss',
     imports: [
-      AsyncPipe, 
-      CommonModule, 
+      AsyncPipe,
+      CommonModule,
       FiltroLibraryComponent
     ]
 })
@@ -20,10 +21,12 @@ export class BibliotecaComponent implements OnInit {
 
   public cards$!:Observable<Card[]>
   public url: string = '';
+  filtro: string = '';
 
 
   constructor(
-    private jsonSvc: JsonServiceService
+    private jsonSvc: JsonServiceService,
+    public filtrado:FiltradoPipe
   ) {}
 
   setUrlImage(url: string):void {

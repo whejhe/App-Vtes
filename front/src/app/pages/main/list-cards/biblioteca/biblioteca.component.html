@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of cards$ | async"
+      <tr *ngFor="let card of cards$  | async"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
       >
