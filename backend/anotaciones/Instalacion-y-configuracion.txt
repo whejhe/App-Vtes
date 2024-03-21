@@ -19,11 +19,3 @@ IMAGENES
 nm install openia
 npm install cloudinary
 
-.ENV
-MONGODB_USER=dominguezalacid
-MONGODB_PASSWORD=Go5pINGCTevTV0tV
-MONGO_PORT=8093
-MONGO_DB_NAME=VtesDB
-MONGODB_URL=mongodb+srv://dominguezalacid:Go5pINGCTevTV0tV@vtesdb.gf9nbee.mongodb.net/?retryWrites=true&w=majority&appName=VtesDB
-PORT=3000
-JWT_SECRET=fhweifrdw3@ph9n9p8€40w34c|1!v2w0%39m4
