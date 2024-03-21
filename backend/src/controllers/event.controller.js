@@ -6,8 +6,8 @@ import User from "../models/user.models.js";
 const createEvent = async (req, res) => {
     try {
         const { name, description, date } = req.body;
-        const creatorId = req.user._id;
-        const newEvent = new Event({ _id:creatorId, name, description, date });
+        const creator = User.findById(req.user._id);
+        const newEvent = new Event({ _id:creator._id, name, description, date });
         await newEvent.save();
         res.status(201).json(newEvent);
     } catch (error) {
