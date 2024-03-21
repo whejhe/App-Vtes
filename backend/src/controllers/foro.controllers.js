@@ -5,8 +5,12 @@ import User  from "../models/user.models.js";
 // Crear un nuevo foro
 const createForo = async (req, res) => {
     try {
-        const { title, content } = req.body;
-        const userId = req.user.id;
+        console.log("Crear foro ::: ", req.body);
+        console.log("Crear foro ::: ", req.user);
+        const { userId: id, title, content } = req.body;
+
+        const userId = req.user?.id ?? id;
+
         console.log('userId: ', userId);
         const newForo = new Foro({ userId, title, content });
         await newForo.save();

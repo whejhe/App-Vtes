@@ -36,6 +36,20 @@ const getPostById = async (req, res) => {
     }
 };
 
+//Obtener post por usuario ID
+const getPostByUserId = async (req, res) => {
+    try {
+        const post = await Post.find({ authorId: req.params.id });
+        if (!post) {
+            return res.status(404).json({ error: "Post no encontrado" });
+        }
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+
+
 // Actualizar un post por ID
 const updatePost = async (req, res) => {
     try {
@@ -69,6 +83,7 @@ const postControllers = {
     createPost,
     getPosts,
     getPostById,
+    getPostByUserId,
     updatePost,
     deletePost
 };

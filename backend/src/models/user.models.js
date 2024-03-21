@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { v4 as uuidv4 } from 'uuid';
 import { connectDB } from "../service/mongoDB.js";
-import { permissions } from "../middlewares/permissions.js";
+import { roles } from "../middlewares/roles.js";
 
 const { Schema } = mongoose;
 
@@ -19,10 +19,6 @@ const userSchema = new Schema({
         type: String,
         enum: ["ADMIN", "USER","COLLABORATOR", "GUEST"],
         default: "USER"
-    },
-    permissions:{
-        type: [String],
-        default: permissions.USER
     },
     name:{
         type: String,

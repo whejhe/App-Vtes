@@ -36,6 +36,19 @@ const getMessageById = async (req, res) => {
     }
 };
 
+// Obtener un mensaje por User ID
+const getMessagesByUserId = async (req, res) => {
+    try {
+        const messages = await Message.find({ userId: req.params.id });
+        if (!messages) {
+            return res.status(404).json({ error: "Mensajes no encontrado" });
+        }
+        res.status(200).json(messages);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
 // Actualizar un mensaje por ID
 const updateMessage = async (req, res) => {
     try {
@@ -69,6 +82,7 @@ const messageControllers = {
     createMessage,
     getMessages,
     getMessageById,
+    getMessagesByUserId, 
     updateMessage,
     deleteMessage
 };

@@ -4,12 +4,13 @@ import { postControllers } from '../controllers/index.js';
 
 const router = express.Router();
 
-const { createPost, getPosts, getPostById, updatePost, deletePost } = postControllers;
+const { createPost, getPosts, getPostById, getPostByUserId, updatePost, deletePost } = postControllers;
 
 // Rutas para la entidad Post
 router.post('/post', createPost);
 router.get('/posts', getPosts);
 router.get('/posts/:id', getPostById);
+router.get('/posts/:userId', getPostByUserId);
 router.put('/posts/:id', updatePost);
 router.delete('/posts/:id', deletePost);
 

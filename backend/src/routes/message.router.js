@@ -4,12 +4,13 @@ import { messageControllers } from '../controllers/index.js';
 
 const router = express.Router();
 
-const { createMessage, getMessages, getMessageById, updateMessage, deleteMessage } = messageControllers;
+const { createMessage, getMessages, getMessageById, getMessagesByUserId  , updateMessage, deleteMessage } = messageControllers;
 
 // Rutas para la entidad Message
 router.post('/message', createMessage);
 router.get('/messages', getMessages);
 router.get('/messages/:id', getMessageById);
+router.get('/messages/:userId', getMessagesByUserId);
 router.put('/messages/:id', updateMessage);
 router.delete('/messages/:id', deleteMessage);
 
