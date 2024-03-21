@@ -12,7 +12,8 @@ const customCardsSchema = new Schema({
     },
     deckId: {
         type: String,
-        ref: 'Deck'
+        ref: 'Deck',
+        required: false,
     },
     name: {
         type: String,

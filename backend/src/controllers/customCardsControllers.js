@@ -13,6 +13,20 @@ const createCustomCard = async (req, res) => {
     }
 };
 
+// Obtener imagen por ID
+const getCustomCardById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const customCard = await Cards.findById(id);
+        if (!customCard) {
+            return res.status(404).json({ error: "Carta personalizada no encontrada" });
+        }
+        res.status(200).json(customCard);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
 // Obtener todas las cartas personalizadas de un mazo
 const getCustomCardsByDeckId = async (req, res) => {
     try {
@@ -55,6 +69,7 @@ const deleteCustomCard = async (req, res) => {
 
 const customCardsControllers = {
     createCustomCard,
+    getCustomCardById,
     getCustomCardsByDeckId,
     updateCustomCard,
     deleteCustomCard

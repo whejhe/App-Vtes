@@ -1,11 +1,13 @@
 // Importa el modelo de Event
 import { Event } from "../models/event.model.js";
+import User from "../models/user.models.js";
 
 // Crear un nuevo evento
 const createEvent = async (req, res) => {
     try {
-        const { creatorId, name, description, date } = req.body;
-        const newEvent = new Event({ creatorId, name, description, date });
+        const { name, description, date } = req.body;
+        const creatorId = req.user._id;
+        const newEvent = new Event({ _id:creatorId, name, description, date });
         await newEvent.save();
         res.status(201).json(newEvent);
     } catch (error) {

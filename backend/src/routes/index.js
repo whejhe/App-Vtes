@@ -14,17 +14,17 @@ import deckRoute from "./deck.router.js";
 import customCardsRoute from "./customCardsRouter.js";
 import cardsRoute from "./cards.router.js";
 
-router.use("/users", userRouter);
-router.use("/posts", post);
-router.use("/messages", message);
-router.use("/library",libraryRouter);
-router.use("/image",imageRoute);
-router.use("/foro",foroRoute);
-router.use("/event",eventRoute);
-router.use("/eventUser",eventUserRoute);
-router.use("/deck",deckRoute);
-router.use("/customCards",customCardsRoute);
-router.use("/cards",cardsRoute);
+router.use("/", userRouter);
+router.use("/", post);
+router.use("/", message);
+router.use("/",libraryRouter);
+router.use("/",imageRoute);
+router.use("/",foroRoute);
+router.use("/",eventRoute);
+router.use("/",eventUserRoute);
+router.use("/",deckRoute);
+router.use("/",customCardsRoute);
+router.use("/",cardsRoute);
 
 
 export default router;

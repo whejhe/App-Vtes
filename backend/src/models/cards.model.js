@@ -19,10 +19,10 @@ const cardsSchema = new Schema({
         unique: true,
         required: [true, 'El nombre de la carta es obligatoria']
     },
-    image: {
+    url: {
         type: String,
         unique: true,
-        required: [true, 'La imagen de la carta es obligatoria']
+        required: false
     },
     description: {
         type: String,

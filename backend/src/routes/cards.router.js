@@ -11,6 +11,6 @@ router.get('/cards', getCards);
 router.get('/cards/:id', getCardsById);
 router.get('/cards/:deckId', getCardsByDeckId);
 router.put('/cards/:id', updateCard);
-router.delete('cards/:id', deleteCard);
+router.delete('/cards/:id', deleteCard);
 
 export default router;

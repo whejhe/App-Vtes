@@ -1,10 +1,13 @@
 // Importa el modelo de Foro
 import { Foro } from "../models/foro.model.js";
+import User  from "../models/user.models.js";
 
 // Crear un nuevo foro
 const createForo = async (req, res) => {
     try {
-        const { userId, title, content } = req.body;
+        const { title, content } = req.body;
+        const userId = req.user.id;
+        console.log('userId: ', userId);
         const newForo = new Foro({ userId, title, content });
         await newForo.save();
         res.status(201).json(newForo);

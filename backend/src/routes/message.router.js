@@ -7,10 +7,10 @@ const router = express.Router();
 const { createMessage, getMessages, getMessageById, updateMessage, deleteMessage } = messageControllers;
 
 // Rutas para la entidad Message
-router.post('message/', createMessage);
-router.get('messages/', getMessages);
-router.get('messages/:id', getMessageById);
-router.put('messages/:id', updateMessage);
-router.delete('messages/:id', deleteMessage);
+router.post('/message', createMessage);
+router.get('/messages', getMessages);
+router.get('/messages/:id', getMessageById);
+router.put('/messages/:id', updateMessage);
+router.delete('/messages/:id', deleteMessage);
 
 export default router;

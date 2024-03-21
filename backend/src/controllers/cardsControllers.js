@@ -4,8 +4,8 @@ import Cards from "../models/cards.model.js";
 // Crear una nueva carta
 const createCard = async (req, res) => {
     try {
-        const { deckId, name, image, description, type } = req.body;
-        const newCard = new Cards({ deckId, name, image, description, type });
+        const { name, url, description, type } = req.body;
+        const newCard = new Cards({ name, url, description, type });
         await newCard.save();
         res.status(201).json(newCard);
     } catch (error) {
@@ -67,7 +67,7 @@ const updateCard = async (req, res) => {
 const deleteCard = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedCard = await Cards.findByIdAndDelete(id);
+        const deletedCard = await Cards.findByIdAndDelete({_id:id});
         if (!deletedCard) {
             return res.status(404).json({ error: "Carta no encontrada" });
         }

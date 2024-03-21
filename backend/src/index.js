@@ -5,7 +5,7 @@ import path from "path";
 import dotenv from "dotenv";
 import cors from "cors";
 import routes from "./routes/index.js";
-// import router from "./routes/user.router.js";
+// import routes from "./routes/user.router.js";
 import multerMiddleware from "./middlewares/multer.middleware.js";
 import "./service/mongoDB.js";
 

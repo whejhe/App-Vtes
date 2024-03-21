@@ -26,11 +26,22 @@ const getImages = async (req, res) => {
 // Obtener una imagen por ID
 const getImageById = async (req, res) => {
     try {
-        const image = await Image.findById(req.params.id);
+        const image = await Image.findById({_id:req.params.id});
         if (!image) {
             return res.status(404).json({ error: "Imagen no encontrada" });
         }
         res.status(200).json(image);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Obtener todas las imagenes de un usuario
+const getImagesByUserId = async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const images = await Image.find({ userId });
+        res.status(200).json(images);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -69,6 +80,7 @@ const imageControllers = {
     createImage,
     getImages,
     getImageById,
+    getImagesByUserId,
     updateImage,
     deleteImage
 };
