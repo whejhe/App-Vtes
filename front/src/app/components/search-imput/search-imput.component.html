@@ -1,5 +1,5 @@
 <div>
-  <form class="d-flex mt-3" role="search">
+  <form class="d-flex mt-3" role="search" (ngSubmit)="enviarFiltro()">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filtro">
     <button class="btn btn-outline-danger" type="submit">Search</button>
 </form>

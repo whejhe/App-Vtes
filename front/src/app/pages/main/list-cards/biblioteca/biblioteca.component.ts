@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FiltroLibraryComponent } from '../../../../components/filtro-library/filtro-library.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
 import { FiltradoPipe } from '../../../../pipes/filtrado.pipe';
@@ -14,7 +13,6 @@ import { FiltradoPipe } from '../../../../pipes/filtrado.pipe';
     imports: [
       AsyncPipe,
       CommonModule,
-      FiltroLibraryComponent
     ]
 })
 export class BibliotecaComponent implements OnInit {
@@ -23,10 +21,13 @@ export class BibliotecaComponent implements OnInit {
   public url: string = '';
   filtro: string = '';
 
+  filtrar(filtro: string){
+    this.filtro = filtro;
+  }
+
 
   constructor(
     private jsonSvc: JsonServiceService,
-    public filtrado:FiltradoPipe
   ) {}
 
   setUrlImage(url: string):void {

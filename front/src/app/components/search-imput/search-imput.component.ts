@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Card } from '../../models/vtes.model';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './search-imput.component.html',
   styleUrl: './search-imput.component.scss'
@@ -17,5 +17,10 @@ export class SearchImputComponent {
 
   filtro:string = '';
   cards:Card[] = [];
+  @Output() filtroChanged = new EventEmitter<string>();
+
+  enviarFiltro(){
+    this.filtroChanged.emit(this.filtro);
+  }
 
 }

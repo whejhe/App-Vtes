@@ -1,4 +1,9 @@
-<app-filtro-library></app-filtro-library>
+<div>
+  <form class="d-flex mt-3" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filtro">
+    <button class="btn btn-outline-danger" type="submit">Search</button>
+</form>
+</div>
 
 <div class="container">
   <table class="table">
@@ -12,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of cards$  | async"
+      <tr *ngFor="let card of cards$  | async | filtrado:filtro:'_name'"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
       >
