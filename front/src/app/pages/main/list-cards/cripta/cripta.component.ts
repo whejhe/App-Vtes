@@ -5,9 +5,9 @@ import { FichaCardComponent } from '../../../../components/ficha-card/ficha-card
 import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
-import { DetailsCardComponent } from '../../../../components/details-card/details-card.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NameFilterPipe } from '../../../../pipes/text-filter.pipe';
+import { DetailsCardVampireComponent } from '../../../../components/details-card-vampire/details-card-vampire.component';
 
 @Component({
     selector: 'app-cripta',
@@ -19,7 +19,6 @@ import { NameFilterPipe } from '../../../../pipes/text-filter.pipe';
       CommonModule,
       FichaCardComponent,
       FiltroCryptComponent,
-      DetailsCardComponent,
       NameFilterPipe
     ]
 })
@@ -55,7 +54,7 @@ export class CriptaComponent implements OnInit {
   }
 
   openModal(){
-    this.dialog.open(DetailsCardComponent);
+    this.dialog.open(DetailsCardVampireComponent);
   }
 
   ngOnInit(): void {

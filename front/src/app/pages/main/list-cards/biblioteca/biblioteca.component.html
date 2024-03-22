@@ -8,19 +8,18 @@
         <th>Imagen</th>
         <th>Tipo</th>
         <th>Coste</th>
-        <th>Ver más</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let card of cards$ | async"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
+        (click)="openModal()"
       >
         <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
         <td></td>
         <td>{{card.types}}</td>
         <td>{{card.blood_cost}} {{card.pool_cost}}</td>
-        <td><a href="#">Info</a></td>
       </tr>
     </tbody>
   </table>

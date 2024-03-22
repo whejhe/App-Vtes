@@ -4,6 +4,8 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FiltroLibraryComponent } from '../../../../components/filtro-library/filtro-library.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsCardLibraryComponent } from '../../../../components/details-card-library/details-card-library.component';
 
 @Component({
     selector: 'app-biblioteca',
@@ -23,7 +25,8 @@ export class BibliotecaComponent implements OnInit {
 
 
   constructor(
-    private jsonSvc: JsonServiceService
+    private jsonSvc: JsonServiceService,
+    public dialog: MatDialog
   ) {}
 
   setUrlImage(url: string):void {
@@ -41,6 +44,10 @@ export class BibliotecaComponent implements OnInit {
         this.cards$ = of(cards.filter(card => !(card.types.includes(Type.Vampire)) && !(card.types.includes(Type.Imbued))));
       }
     )
+  }
+
+  openModal(){
+    this.dialog.open(DetailsCardLibraryComponent);
   }
 
 
