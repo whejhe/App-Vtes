@@ -1,9 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filtrado'
+  name: 'orderBy',
+  standalone: true
 })
-export class FiltradoPipe implements PipeTransform {
+export class OrderByPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
     return null;
