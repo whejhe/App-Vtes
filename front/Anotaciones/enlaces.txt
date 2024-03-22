@@ -1,3 +1,6 @@
+FILTRO
+https://github.com/elena-in-code/Angular-Photo-Gallery-App
+
 GENERAR INTERFACE APARTIR DE JSON
 https://app.quicktype.io/
 
