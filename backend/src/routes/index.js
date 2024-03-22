@@ -13,9 +13,11 @@ import eventUserRoute from "./event-users.router.js";
 import deckRoute from "./deck.router.js";
 import customCardsRoute from "./customCardsRouter.js";
 import cardsRoute from "./cards.router.js";
+import adminRoute from "./admin.route.js";
 import { auth } from "../middlewares/auth.js";
 
 router.use("/", userRouter);
+router.use("/", adminRoute);
 router.use("/",auth, post);
 router.use("/",auth, message);
 router.use("/",auth, libraryRouter);

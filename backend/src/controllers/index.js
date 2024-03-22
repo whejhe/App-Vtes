@@ -9,6 +9,7 @@ import libraryControllers from "./library.controller.js";
 import messageControllers from "./message.controllers.js";
 import postControllers from "./post.controllers.js";
 import userControllers from "./user.controller.js";
+import adminControllers from "./admin.controllers.js";
 
 export {
     cardsControllers,
@@ -21,5 +22,6 @@ export {
     libraryControllers,
     messageControllers,
     postControllers,
-    userControllers
+    userControllers,
+    adminControllers
 }
