@@ -8,20 +8,19 @@
         <th>Clan</th>
         <th>Capacidad</th>
         <th>Disciplinas</th>
-        <th>Ver más</th>
       </tr>
     </thead>
     <tbody>
 
-      <tr *ngFor="let card of cards$ | async"
+      <tr *ngFor="let card of cards | async"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
+        (click)="openModal()"
       >
         <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
         <td>{{card.clans}}</td>
         <td>{{card.capacity}}</td>
         <td>{{card.disciplines}}</td>
-        <td><a href="#">Info</a></td>
       </tr>
     </tbody>
   </table>

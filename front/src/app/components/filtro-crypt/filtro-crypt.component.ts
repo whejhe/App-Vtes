@@ -1,21 +1,27 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SearchImputComponent } from "../search-imput/search-imput.component";
 
 @Component({
     selector: 'app-filtro-crypt',
     standalone: true,
     templateUrl: './filtro-crypt.component.html',
     styleUrl: './filtro-crypt.component.scss',
-    imports: [AsyncPipe, CommonModule, SearchImputComponent]
+    imports: [
+      AsyncPipe, 
+      CommonModule
+    ]
 })
-export class FiltroCryptComponent {
+export class FiltroCryptComponent{
+
+  constructor(
+  ) { }
 
   DisciplinesUrl = '/assets/img/icons-vtes/disciplinas/svg';
 
   imagenSeleccionada: string | null = null;
   inferiorSelect: boolean = false;
   superiorSelect: boolean = false;
+
 
   disciplines: string[] = [
     'abombwe',
@@ -85,6 +91,7 @@ export class FiltroCryptComponent {
       imagenElement.src = `${this.DisciplinesUrl}/${imagen}sup.svg`;
     }
   }
+
 
 
 }

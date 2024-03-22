@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Imagen de la carta</h1>
+            <!-- <img src="../../../assets/img/plantilla.png" alt=""> -->
+            <img src="{{cardInfo[0].url}}" alt="">
         </div>
-        <div class="col-md-6">
-            <h1>Informacion</h1>
-            <h2>Nombre</h2>
-            <h2>Coste</h2>
-            <h2>Clan</h2>
-            <h2>Disciplinas</h2>
+        <div class="col-md-6 info-details">
+            <h2>Nombre: {{cardInfo[0].name }}</h2>
+            <h2>Coste: {{cardInfo[0].capacity }}</h2>
+            <h2>Clan: {{cardInfo[0].clans }}</h2>
+            <h2>Disciplinas: {{cardInfo[0].disciplines }}</h2>
             <br>
-            <p>Desciption</p>
+            <p class="underline">Desciption:</p>
+            <p>{{cardInfo[0].card_text }}</p>
         </div>
     </div>
-    
 </div>

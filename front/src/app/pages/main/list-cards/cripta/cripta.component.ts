@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FichaCardComponent } from '../../../../components/ficha-card/ficha-card.component';
 import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
@@ -7,6 +7,7 @@ import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
 import { DetailsCardComponent } from '../../../../components/details-card/details-card.component';
 import { MatDialog } from '@angular/material/dialog';
+import { NameFilterPipe } from '../../../../pipes/text-filter.pipe';
 
 @Component({
     selector: 'app-cripta',
@@ -18,13 +19,17 @@ import { MatDialog } from '@angular/material/dialog';
       CommonModule,
       FichaCardComponent,
       FiltroCryptComponent,
-      DetailsCardComponent
+      DetailsCardComponent,
+      NameFilterPipe
     ]
 })
 export class CriptaComponent implements OnInit {
-  public cards$!:Observable<Card[]>
+  public cards!:Observable<Card[]>
+  // Assuming cards$ is an Observable<Card[] | null>
+
   public url: string = '';
 
+  public filter!: string;
 
   constructor(
     private jsonSvc: JsonServiceService,
@@ -43,7 +48,7 @@ export class CriptaComponent implements OnInit {
   filtarTypes(types: string):void {
     this.jsonSvc.getJsonData().subscribe(
       cards => {
-        this.cards$ = of(cards.filter(card =>
+        this.cards = of(cards.filter(card =>
           (card.types.includes(Type.Vampire)) || (card.types.includes(Type.Imbued))));
       }
     )
