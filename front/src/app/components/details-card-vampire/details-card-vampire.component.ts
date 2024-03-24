@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Card } from '../../models/vtes.model';
 import { Observable, of } from 'rxjs';
 import { JsonServiceService } from '../../services/json-service.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-details-card-vampire',
@@ -11,17 +12,16 @@ import { JsonServiceService } from '../../services/json-service.service';
   styleUrl: './details-card-vampire.component.scss'
 })
 export class DetailsCardVampireComponent implements OnInit{
-  
-  cardInfo:Card[] = [];
-  cardInfo$: Observable<Card[]> = of(this.cardInfo);
+
 
   constructor(
-    private jsonSvc: JsonServiceService
+    private jsonSvc: JsonServiceService,
+    @Inject(MAT_DIALOG_DATA) public data: {card: Card}
+
   ) {}
 
   ngOnInit(): void {
       this.jsonSvc.getJsonData().subscribe(data => {
-        this.cardInfo = data;
       })
   }
 

@@ -15,7 +15,7 @@
       <tr *ngFor="let card of cards | async"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
-        (click)="openModal()"
+        (click)="openModal(card)"
       >
         <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
         <td>{{card.clans}}</td>

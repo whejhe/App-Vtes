@@ -13,8 +13,8 @@ import { DetailsCardLibraryComponent } from '../../../../components/details-card
     templateUrl: './biblioteca.component.html',
     styleUrl: './biblioteca.component.scss',
     imports: [
-      AsyncPipe, 
-      CommonModule, 
+      AsyncPipe,
+      CommonModule,
       FiltroLibraryComponent
     ]
 })
@@ -46,8 +46,10 @@ export class BibliotecaComponent implements OnInit {
     )
   }
 
-  openModal(){
-    this.dialog.open(DetailsCardLibraryComponent);
+  openModal(card:Card):void{
+    this.dialog.open(DetailsCardLibraryComponent, {
+      data: {card}
+    });
   }
 
 

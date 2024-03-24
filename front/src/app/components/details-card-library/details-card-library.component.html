@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col-md-6">
             <!-- <img src="../../../assets/img/plantilla.png" alt=""> -->
-            <img src="{{cardInfo[0].url}}" alt="">
+            <img src="{{data.card.url}}" alt="">
         </div>
         <div class="col-md-6 info-details">
-            <h2>Nombre: {{cardInfo[0].name }}</h2>
-            <h2>Coste: {{cardInfo[0].capacity }}</h2>
-            <h2>Clan: {{cardInfo[0].clans }}</h2>
-            <h2>Disciplinas: {{cardInfo[0].disciplines }}</h2>
+            <h2>Nombre: {{data.card.name }}</h2>
+            <h2>Coste: {{data.card.capacity }}</h2>
+            <h2>Clan: {{data.card.clans }}</h2>
+            <h2>Disciplinas: {{data.card.disciplines }}</h2>
             <br>
             <p class="underline">Desciption:</p>
-            <p>{{cardInfo[0].card_text }}</p>
+            <p>{{data.card.card_text }}</p>
         </div>
     </div>
 </div>

@@ -53,8 +53,10 @@ export class CriptaComponent implements OnInit {
     )
   }
 
-  openModal(){
-    this.dialog.open(DetailsCardVampireComponent);
+  openModal(card:Card):void{
+    this.dialog.open(DetailsCardVampireComponent,{
+      data: {card}
+    });
   }
 
   ngOnInit(): void {
