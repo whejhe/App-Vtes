@@ -1,9 +1,9 @@
 <app-filtro-crypt></app-filtro-crypt>
 
 <div class="container">
-  <table class="table">
+  <table class="table table-hover">
     <thead>
-      <tr>
+      <tr class="table-dark">
         <th>Nombre</th>
         <th>Clan</th>
         <th>Capacidad</th>
@@ -12,10 +12,12 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let card of cards | async"
+      <tr *ngFor="let card of cards | async; let i=index"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
         (click)="openModal(card)"
+        [class.table-light] = "i % 2 === 0"
+        [class.table-secondary] = "i % 2 !== 0"
       >
         <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
         <td>{{card.clans}}</td>

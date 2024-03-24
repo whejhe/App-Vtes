@@ -1,7 +1,8 @@
 .container{
     width: auto;
-    margin: 1em;
     padding: 1em;
+    background-color: rgb(43, 42, 42);
+    color: aliceblue;
 }
 
 .info-details{
@@ -9,6 +10,21 @@
     font-size: large;
     width: auto;
     margin-right: 200px;
+    min-width: 400px;
+}
+
+.close{
+  color: aliceblue;
+  border-radius: 50%;
+  padding: 0.5em;
+  font-size: large;
+  width: 20px;
+  height: 20px;
+  //margin-left: -1em;
+}
+
+.close:hover{
+  cursor: pointer;
 }
 
 .image{
