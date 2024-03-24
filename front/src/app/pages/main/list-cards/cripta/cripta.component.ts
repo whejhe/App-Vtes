@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FichaCardComponent } from '../../../../components/ficha-card/ficha-card.component';
 import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
@@ -17,7 +16,6 @@ import { DetailsCardVampireComponent } from '../../../../components/details-card
     imports: [
       AsyncPipe,
       CommonModule,
-      FichaCardComponent,
       FiltroCryptComponent,
       NameFilterPipe
     ]

@@ -1,13 +1,26 @@
 .container{
-    width: 800px;
-    margin: 0;
-    padding: 0;
+    width: auto;
+    margin: 1em;
+    padding: 1em;
 }
 
 .info-details{
     padding: 1em;
+    font-size: large;
+    width: auto;
+    margin-right: 200px;
+}
+
+.image{
+  float: right;
 }
 
 .underline{
     text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .info-details{
+    font-size: medium;
+  }
 }
