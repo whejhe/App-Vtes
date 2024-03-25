@@ -6,6 +6,7 @@ import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsCardLibraryComponent } from '../../../../components/details-card-library/details-card-library.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-biblioteca',
@@ -15,7 +16,8 @@ import { DetailsCardLibraryComponent } from '../../../../components/details-card
     imports: [
       AsyncPipe,
       CommonModule,
-      FiltroLibraryComponent
+      FiltroLibraryComponent,
+      FormsModule
     ]
 })
 export class BibliotecaComponent implements OnInit {
