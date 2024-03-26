@@ -1,28 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, map, of } from 'rxjs';
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
+import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Card, Type } from '../../../../models/vtes.model';
 import { JsonServiceService } from '../../../../services/json-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsCardVampireComponent } from '../../../../components/details-card-vampire/details-card-vampire.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FilterPipe } from "../../../../pipes/filter.pipe";
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../../../../pipes/filter.pipe';
 
 @Component({
-    selector: 'app-cripta',
-    standalone: true,
-    templateUrl: './cripta.component.html',
-    styleUrl: './cripta.component.scss',
-    imports: [
-        AsyncPipe,
-        CommonModule,
-        FiltroCryptComponent,
-        FormsModule,
-        FilterPipe
-    ]
+  selector: 'app-pruebapipe',
+  standalone: true,
+  imports: [
+    CommonModule,
+    AsyncPipe,
+    FiltroCryptComponent,
+    FormsModule,
+    FilterPipe
+  ],
+  templateUrl: './pruebapipe.component.html',
+  styleUrl: './pruebapipe.component.scss'
 })
-export class CriptaComponent implements OnInit {
+export class PruebapipeComponent {
   // public cards!: Observable<Card[]>;
   public cards!: Card[];
   public url: string = '';

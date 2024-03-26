@@ -48,7 +48,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of cards | filter:['Vampire', 'Imbued']:false; let i=index"
+      <tr *ngFor="let card of cards | filter:['Vampire', 'Imbued']:true; let i=index"
         (mouseenter)="setUrlImage(card.url)"
         (mouseleave)="clearUrlImage()"
         (click)="openModal(card)"

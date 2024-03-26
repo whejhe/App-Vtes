@@ -2,13 +2,15 @@ node -v
 npm -v
 
 npm install -g @angular/cli
-ng new Inmortal-vtes
+
+ng new nombre-aplication
 
 ng generate service services/json-service
 ng generate guard guards
 ng generate component components/header
 ng generate component pages/main
 ng generate module pages/pages
+ng generate module components --module=app
 ng generate pipe pipes/my-custom
 ng g environments
 
