@@ -8,19 +8,21 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FiltroCryptComponent } from '../../../../components/filtro-crypt/filtro-crypt.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../../../pipes/filter.pipe';
+import { FilterByNamePipe } from "../../../../pipes/filter-by-name.pipe";
 
 @Component({
-  selector: 'app-pruebapipe',
-  standalone: true,
-  imports: [
-    CommonModule,
-    AsyncPipe,
-    FiltroCryptComponent,
-    FormsModule,
-    FilterPipe
-  ],
-  templateUrl: './pruebapipe.component.html',
-  styleUrl: './pruebapipe.component.scss'
+    selector: 'app-pruebapipe',
+    standalone: true,
+    templateUrl: './pruebapipe.component.html',
+    styleUrl: './pruebapipe.component.scss',
+    imports: [
+        CommonModule,
+        AsyncPipe,
+        FiltroCryptComponent,
+        FormsModule,
+        FilterPipe,
+        FilterByNamePipe
+    ]
 })
 export class PruebapipeComponent {
   // public cards!: Observable<Card[]>;
@@ -28,7 +30,7 @@ export class PruebapipeComponent {
   public url: string = '';
 
   public filter!: string;
-  searchName = '';
+  public searchName:string = '';
 
   constructor(private jsonSvc: JsonServiceService, public dialog: MatDialog) {}
 
