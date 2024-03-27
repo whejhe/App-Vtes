@@ -4,16 +4,27 @@
 
   <form class="row filtro-header" role="search">
     <div class="col-md-4">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <label for="marca" class="form-label">Search:</label>
+      <input
+      name="filter"
+      [(ngModel)]="searchName"
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      >
     </div>
+
     <div class="col-md-4">
-      <select name="" id="" class="form-select">
-        <option value="">Search Type</option>
+      <label for="marca" class="form-label">Type:</label>
+      <select name="type" id="type" class="form-select" [(ngModel)]="searchType">
+        <option value="type" *ngFor="let type of types">{{type}}</option>
       </select>
     </div>
     <div class="col-md-4">
-      <select name="" id="" class="form-select">
-        <option value="">Search Clan</option>
+      <label for="marca" class="form-label">Clan:</label>
+      <select name="clan" id="clan" class="form-select" [(ngModel)]="searchClan">
+        <option value="" *ngFor="let clan of clans">{{clan}}</option>
       </select>
     </div>
   </form>
@@ -23,28 +34,37 @@
     <thead>
       <tr class="table-dark">
         <th>Nombre</th>
-        <th>Imagen</th>
+        <th>Disciplines</th>
         <th>Tipo</th>
         <th>Coste</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of cards$ | async; let i = index"
-        (mouseenter)="setUrlImage(card.url)"
-        (mouseleave)="clearUrlImage()"
+      <tr *ngFor="let card of cards |
+      filter:['Vampire', 'Imbued']:true |filterByName:searchName; let i=index"
         (click)="openModal(card)"
         [class.table-light] = "i % 2 === 0"
         [class.table-secondary] = "i % 2 !== 0"
       >
-        <td class="imageFloat" style="cursor: pointer">{{card._name}}</td>
-        <td></td>
+        <td class="imageFloat" style="cursor: pointer"
+        (mouseenter)="setUrlImage(card.url)"
+        (mouseleave)="clearUrlImage()"
+        >{{card._name}}</td>
+        <td>{{card.disciplines}}</td>
         <td>{{card.types}}</td>
-        <td>{{card.blood_cost}} {{card.pool_cost}}</td>
+        <!-- <td>{{card.blood_cost}} {{card.pool_cost}}</td> -->
+        <td>
+          @defer (on viewport) {
+            <img class="imageIcons" [src]="getBloodCostImage(card.blood_cost) || getPoolCostImage(card.pool_cost)" loading="lazy">
+          }@placeholder{
+            <p>{{card.blood_cost}} {{card.pool_cost}}</p>
+          }
+        </td>
       </tr>
     </tbody>
   </table>
 
-   <div class="imagenDestacada" *ngIf="url">
-    <img [src]="url" alt="Imagen destacada" />
+   <div class="imagenEmergente" *ngIf="url">
+    <img [src]="url" alt="Imagen" />
   </div>
 </div>

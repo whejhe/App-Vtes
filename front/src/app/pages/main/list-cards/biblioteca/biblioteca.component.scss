@@ -1,12 +1,30 @@
-
-.imagenDestacada{
-  width: 150px;
-  height: auto;
+.container{
+  width: 80%;
+  margin: auto 15% auto auto;
+}
+.imagenEmergente{
   position: fixed;
-  top: 30%;
-  left: 30%;
+  top: 30vh;
+  right: 3vh;
 }
 
 .filtro-header{
   margin-top: 2em;
+}
+
+label{
+  font-weight: bold;
+}
+
+.imageIcons{
+  height: auto;
+  margin: -0.5em;
+  width: 40px;
+}
+
+tr{
+  width: 100%;
+  td{
+    width: 25%;
+  }
 }

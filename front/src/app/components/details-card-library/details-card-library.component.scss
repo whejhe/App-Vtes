@@ -1,8 +1,8 @@
 .container{
     width: auto;
     padding: 1em;
-    background-color: rgb(43, 42, 42);
-    color: aliceblue;
+    background-color: rgb(197, 194, 194);
+    color: rgb(26, 26, 26);
 }
 
 .info-details{
@@ -14,7 +14,7 @@
 }
 
 .close{
-  color: aliceblue;
+  color: rgb(36, 37, 37);
   border-radius: 50%;
   padding: 0.5em;
   font-size: large;
@@ -38,5 +38,20 @@
 @media screen and (max-width: 800px) {
   .info-details{
     font-size: medium;
+  }
+}
+
+h2{
+  font-weight: bold;
+}
+
+.coste{
+  display: flex;
+  align-items: center;
+  h2{
+    padding-top: 1em;
+  }
+  img{
+    width: 50px;
   }
 }

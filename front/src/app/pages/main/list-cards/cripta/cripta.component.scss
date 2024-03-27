@@ -4,13 +4,17 @@
 }
 
 .imagenDestacada{
-  width: 200px;
+  width: 150px;
   height: auto;
   position: fixed;
-  top: 30%;
-  left: 30%;
+  top: 120px;
+  right: 200px;
 }
 
 .filtro-header{
   margin-top: 2em;
+}
+
+label{
+  font-weight: bold;
 }

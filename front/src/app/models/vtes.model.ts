@@ -94,19 +94,19 @@ export enum Clan {
   BloodBrother = "Blood Brother",
   Brujah = "Brujah",
   BrujahAntitribu = "Brujah antitribu",
-  Bundle1 = "Bundle 1",
-  Bundle2 = "Bundle 2",
+  // Bundle1 = "Bundle 1",
+  // Bundle2 = "Bundle 2",
   Caitiff = "Caitiff",
   DaughterOfCacophony = "Daughter of Cacophony",
   Defender = "Defender",
-  ECBerlinEdition = "EC Berlin Edition",
+  // ECBerlinEdition = "EC Berlin Edition",
   Gangrel = "Gangrel",
   GangrelAntitribu = "Gangrel antitribu",
   Gargoyle = "Gargoyle",
   Giovanni = "Giovanni",
   Guruhi = "Guruhi",
   HarbingerOfSkulls = "Harbinger of Skulls",
-  HumbleBundle = "Humble Bundle",
+  // HumbleBundle = "Humble Bundle",
   Innocent = "Innocent",
   Ishtarri = "Ishtarri",
   Judge = "Judge",
@@ -136,6 +136,7 @@ export enum Clan {
   VentrueAntitribu = "Ventrue antitribu",
   Visionary = "Visionary",
 }
+
 
 export enum Discipline {
   Abo = "abo",
