@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../../../pipes/filter.pipe';
 import { FilterByNamePipe } from '../../../../pipes/filter-by-name.pipe';
 import { ImageStoreService } from '../../../../services/image-store.service';
+import { IconService } from '../../../../services/icon.service';
+import { __values } from 'tslib';
 // import { InfiniteScrollPipe } from '../../../../pipes/infinite-scroll.pipe';
 
 @Component({
@@ -40,12 +42,12 @@ export class BibliotecaComponent implements OnInit {
   public searchType!: string;
   public searchClan!: string;
   imageStyles!: { width: string; height: string; };
-  // public pageSize!: number;
-  // public currentPage: number = 50;
+
 
   constructor(
     private jsonSvc: JsonServiceService,
     public dialog: MatDialog,
+    private iconSvc: IconService
   ) {}
 
 
@@ -63,6 +65,12 @@ export class BibliotecaComponent implements OnInit {
       data: {card}
     });
   }
+
+  // getIcons(url:string){
+  //   const bloodCostImage = this.iconSvc.getBloodCostImage(this.url);
+  //   const poolCostImage = this.iconSvc.getPoolCostImage(this.url);
+  //   return {bloodCostImage, poolCostImage};
+  // }
 
 
   getBloodCostImage(bloodCost: string | undefined): string {
@@ -103,7 +111,7 @@ export class BibliotecaComponent implements OnInit {
     this.jsonSvc.getJsonData().subscribe((cards) => {
       this.cards = cards;
     });
-    console.log(this.getPoolCostImage)
-    console.log(this.getBloodCostImage)
+    // console.log(this.getPoolCostImage)
+    // console.log(this.getBloodCostImage)
   }
 }

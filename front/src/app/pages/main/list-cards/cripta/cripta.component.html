@@ -63,6 +63,14 @@
         <td>{{card.clans}}</td>
         <td>{{card.capacity}}</td>
         <td>{{card.disciplines}}</td>
+        <!-- <td>
+          @defer (on viewport) {
+            <img class="imageIcons" [src]="getIconDiscipline(card.disciplines)" loading="lazy">
+          }@placeholder{
+            <p>{{card.disciplines}}</p>
+          }
+        </td> -->
+        <!-- <td><img class="imageIcons" src="../../../../../assets/img/icons-vtes/disciplinas/svg/inf/{{card.disciplines}}.svg" alt=""></td> -->
         <td>{{card.group}}</td>
       </tr>
     </tbody>

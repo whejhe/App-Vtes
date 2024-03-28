@@ -14,11 +14,9 @@ import { CriptaComponent } from "./list-cards/cripta/cripta.component";
 import { BibliotecaComponent } from "./list-cards/biblioteca/biblioteca.component";
 import { ListForosComponent } from "./foro/list-foros/list-foros.component";
 import { NewForoComponent } from "./foro/new-foro/new-foro.component";
-import { PruebapipeComponent } from "./list-cards/pruebapipe/pruebapipe.component";
 
 export const MAIN_ROUTE:Routes = [
   {path: '', component: InicioComponent},
-  {path: 'pruebapipe', component: PruebapipeComponent},
   {path: 'cripta', component: CriptaComponent},
   {path: 'biblioteca', component: BibliotecaComponent},
   {path: 'portada-custom-card', component: PortadaCustomCardComponent},

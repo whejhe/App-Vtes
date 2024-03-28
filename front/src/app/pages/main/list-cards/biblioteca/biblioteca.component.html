@@ -52,7 +52,6 @@
         >{{card._name}}</td>
         <td>{{card.disciplines}}</td>
         <td>{{card.types}}</td>
-        <!-- <td>{{card.blood_cost}} {{card.pool_cost}}</td> -->
         <td>
           @defer (on viewport) {
             <img class="imageIcons" [src]="getBloodCostImage(card.blood_cost) || getPoolCostImage(card.pool_cost)" loading="lazy">

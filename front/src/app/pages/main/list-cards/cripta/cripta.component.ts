@@ -56,6 +56,27 @@ export class CriptaComponent implements OnInit {
     });
   }
 
+  getIconDiscipline(card: Card): string[] {
+    const iconPaths: string[] = [];
+      if (card.disciplines) {
+      card.disciplines.forEach((discipline) => {
+        let iconPath: string;
+        switch (discipline) {
+          case 'abo':
+            iconPath = '../../../../../assets/img/icons-vtes/disciplinas/svg/inf/abo.svg';
+            break;
+          default:
+            iconPath = ''; // Devolver una cadena vacía por defecto si no hay coincidencia
+            break;
+        }
+        iconPaths.push(iconPath);
+      });
+    }
+
+    // Devolver el arreglo de rutas de imágenes
+    return iconPaths;
+  }
+
   ngOnInit(): void {
     this.jsonSvc.getJsonData().subscribe((cards) => {
       this.cards = cards;

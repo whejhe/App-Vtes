@@ -1,4 +1,5 @@
-mirar 
- import {MatDatepickerModule} from '@angular/material/datepicker'; 
+mirar
+ import {MatDatepickerModule} from '@angular/material/datepicker';
 
- import {MatPaginatorModule} from '@angular/material/paginator'; 
+ import {MatPaginatorModule} from '@angular/material/paginator';
+
